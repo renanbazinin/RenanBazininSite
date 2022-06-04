@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/RenanBazininSite/static/css/main.ce59b54b.css",
-    "main.js": "/RenanBazininSite/static/js/main.51eab055.js",
+    "main.js": "/RenanBazininSite/static/js/main.a1091efd.js",
     "static/js/787.28cb0dcd.chunk.js": "/RenanBazininSite/static/js/787.28cb0dcd.chunk.js",
     "static/media/logo.svg": "/RenanBazininSite/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/RenanBazininSite/index.html",
     "main.ce59b54b.css.map": "/RenanBazininSite/static/css/main.ce59b54b.css.map",
-    "main.51eab055.js.map": "/RenanBazininSite/static/js/main.51eab055.js.map",
+    "main.a1091efd.js.map": "/RenanBazininSite/static/js/main.a1091efd.js.map",
     "787.28cb0dcd.chunk.js.map": "/RenanBazininSite/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ce59b54b.css",
-    "static/js/main.51eab055.js"
+    "static/js/main.a1091efd.js"
   ]
 }
