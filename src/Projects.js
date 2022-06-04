@@ -1,0 +1,38 @@
+import React from 'react'
+import { Routes, Route, Link ,useNavigate} from "react-router-dom"
+import './App.css';
+export default function Projects() {
+    const navigate = useNavigate()
+  return (
+      
+    <div>
+        <h1>Projects</h1>
+    <br/>
+        <h5>Anamenztron</h5>
+        <img src='https://renanbazinin.github.io/Anamnezatron1/images/anamnaz1high.png' style={{width:"100px"}}/>
+        <div  className='About' >
+        <strong>short:</strong> Helping the user to write medical record quickly and more efficient. Anamenztron = Anamnesis + tron 
+        <br/>
+        <strong>Story:</strong> This is very special project in my heart.<br/>
+        Back in 2019 I was in the army. I was medic and stationed in big clinic. In normal day I encountered atleast 50 patients.
+        Because many legal laws in medical care I need to record many elaborate medical terms. This was so exhausting.
+        Like 90% of the cases were with similar pattrens. I knew Web programming languages and had an idea to make life easy. 
+        But the problem with the army is that you can't import web environment without hell. And I was only medic. So I did it with pure vanilla JavaScript. Wrote in notepad++.
+         
+        </div>
+        <button onClick={()=>{window.location.href = 'https://renanbazinin.github.io/Anamnezatron1/';}}>Go To Site</button>
+        <br/>  <br/>
+        <h5>FullStack Course , From KERNELiOS </h5>
+        <div  className='About' >
+   
+        <strong>short:</strong> Site destined to manager who runs movie-rental store (like BlockBuster)
+        <strong>Story:</strong> This is very special project in my heart.<br/>
+        After I discharged from the army I got free course in fullstack. I learn advance JavaScript , React and NoSQL (using mongo).
+        Meanwhile, I didn't upload all the server-side to heroku. So you can watch my code in GitHub.
+        </div>
+        <button onClick={()=>{window.location.href = 'https://github.com/renanbazinin/FinalFullStack-Movies-managage/';}}>Go To GitHub</button>
+    
+    </div>
+    
+  )
+}
