@@ -43,7 +43,7 @@ export default function TimeLine() {
         <ul>
         <li>Excellence of Medical Services Center (Prize Of Colonol) </li>
         <li>Made program for ideal human resource extraction (Made in VBA)</li>
-        <li style={styleY}  onClick={()=>{navigate("/Projects")}} onPointerOver={(e)=>changeCursor(e)} onPointerOut={(e)=>{changeCursor(e)}} >Made program for writing medical records (Personal project)</li>
+        <li style={styleY}  onClick={()=>{navigate("#/Projects")}} onPointerOver={(e)=>changeCursor(e)} onPointerOut={(e)=>{changeCursor(e)}} >Made program for writing medical records (Personal project)</li>
  
         </ul>
       </Event>
