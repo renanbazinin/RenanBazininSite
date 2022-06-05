@@ -28,6 +28,7 @@ function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+       
             <Nav.Link href="#/RenanBazinin">Renan Bazinin</Nav.Link>
             <Nav.Link href="#/TimeLine">Time Line</Nav.Link>
             <Nav.Link href="#/Projects">Projects</Nav.Link>
@@ -45,11 +46,18 @@ function App() {
       </Container>
     </Navbar>
       <Routes>
+        <Route path='/' element={<RenanBazinn/>}/>
         <Route path='/RenanBazinin' element={<RenanBazinn/>}/>
         <Route path='/Projects' element={<Projects/>}/>
         <Route path='/TimeLine' element={<TimeLine/>}/>
 
       </Routes>
+
+      <footer>
+      Email: <a href = "mailto: renanbazinin2@gmail.com">renanbazinin2@gmail.com</a>
+
+        
+      </footer>
     </div>
     
   );

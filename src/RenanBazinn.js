@@ -8,9 +8,11 @@ export default function RenanBazinn() {
         <h4>Points about me in this world</h4>
             <div>
             <ul>
-                  <li>I studied at a program called computational science in Davidson institute (five points in the Bagrut).</li>
-                  <li>In high school I was in software engineering (Another ten points in the Bagrut).</li>
+                  <li>I studied at a program called computational science in Davidson institute and also software engineering (15 points in the Bagrut).</li>
                   <li>In high school I participated in many Hackathons - second prize in one of them</li>
+                  <li>I still open to everything in this field. I like Web-Development, Algorithmics and hope to gain enough mathematical theory to explor data science world </li>
+                  <li>My project in software engineering was -"Discover the author of anonymous book by data of many other books and authors" inspire by this <a className='NormalLink' href='https://languagelog.ldc.upenn.edu/nll/?p=5315'>Article</a></li>             
+                  
               </ul>
         <h4>knowledge</h4>    
             <div>

@@ -29,13 +29,13 @@ export default function TimeLine() {
       </Event>
       <Event interval={"2014 – 2017"} title={"School"} subtitle={"High School Katzir"}>
         I learn in Nachshon Class, leadership class. 
-        My majors was :
+        My majors Were :
         <ul>
         <li>5 points Math</li>
         <li>10 points Computers</li>
         <li>5 points Computational Science</li>
         <li>5 points Physics</li>
-        <li>Hackathons, Mentoring robotic team and was instructor in science summer camp for middle school</li>
+        <li>and..Hackathons, Mentoring robotic team and was instructor in science summer camp for middle school</li>
         </ul>
       </Event>
       <Event interval={"2017 – 2020"} title={"Army"} subtitle={"Medic and Head of clinic"}>
