@@ -3,6 +3,8 @@ import './App.css';
 import RenanBazinn from './RenanBazinn';
 import Projects from './Projects';
 import TimeLine from  './TimeLine'
+import Stream from './Comp/Stream';
+
 import {Nav , Navbar, NavLink,Container,NavDropdown}from 'react-bootstrap';
 
 import React, { useState, useEffect } from 'react';
@@ -22,9 +24,9 @@ function App() {
         crossOrigin="anonymous"
       />
       <h1>Renan The student</h1>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg" className='Nav'>
       <Container>
-        <Navbar.Brand href=""><img src='https://cdn.pixabay.com/photo/2016/12/17/22/06/smiley-1914523_960_720.png' style={{width:"55px"}}/></Navbar.Brand>
+        <Navbar.Brand href="#/RenanBazinin"><img src='https://cdn.pixabay.com/photo/2016/12/17/22/06/smiley-1914523_960_720.png' style={{width:"55px"}}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -50,7 +52,7 @@ function App() {
         <Route path='/RenanBazinin' element={<RenanBazinn/>}/>
         <Route path='/Projects' element={<Projects/>}/>
         <Route path='/TimeLine' element={<TimeLine/>}/>
-
+        <Route path='/Stream' element={<Stream/>}/>
       </Routes>
 
       <footer>

@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity));
+
 }
 
 
@@ -31,6 +31,7 @@ html{
 }
 
 footer{
+  margin-top: 5px;
   position: fixed;
   left: 0;
   bottom: 0;

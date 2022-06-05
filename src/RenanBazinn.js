@@ -15,9 +15,9 @@ export default function RenanBazinn() {
                   
               </ul>
         <h4>knowledge</h4>    
-            <div>
+            <div >
                 <ul>
-                  <li>C# from high school (97 score final in computer science)</li>
+                  <li>C# from high school (97 score in computer science)</li>
                   <li>Python from project in 5 Point the software engineering (100 score)</li>
                   <li>ASP.net from high school</li>
                   <li>React advanced JavaScript from kernelios (inculding Async programming and Callback function)</li>
