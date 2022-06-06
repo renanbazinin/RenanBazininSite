@@ -27,8 +27,8 @@ export default function Projects() {
    
         <strong>short:</strong> Site destined to manager who runs movie-rental store (like BlockBuster)
         <br/>
-        <strong>Story:</strong> This is very special project in my heart.<br/>
-        After I discharged from the army I got free course in fullstack. I learn advance JavaScript , React and NoSQL (using mongo).
+        <strong>Story: </strong>
+          After I discharged from the army I got free course in fullstack. I learn advance JavaScript , React and NoSQL (using mongo).
         Meanwhile, I didn't upload all the server-side to heroku. So you can watch my code in GitHub.
         </div>
         <button onClick={()=>{window.location.href = 'https://github.com/renanbazinin/FinalFullStack-Movies-managage/';}}>Go To GitHub</button>

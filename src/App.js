@@ -8,12 +8,32 @@ import Stream from './Comp/Stream';
 import {Nav , Navbar, NavLink,Container,NavDropdown}from 'react-bootstrap';
 
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Link ,useNavigate, Switch} from "react-router-dom"
+import { Routes, Route, Link ,useNavigate, Switch,useParams } from "react-router-dom"
+
+import { useSelector } from "react-redux"
+import { useDispatch } from 'react-redux';
+
 
 
 
 function App() {
-  
+
+  const dispatch = useDispatch();
+  const [lang,setLang] = useState('he');
+
+
+  const toggleLang = (e)=>{
+
+      if("English" === e.target.value)
+        setLang("en")
+      else
+        setLang("he")
+      const langForRedux = e.target.value.toUpperCase()
+      alert(langForRedux)
+        dispatch({type:langForRedux})
+  }
+
+
   return (
     <div className="App">
     
@@ -24,7 +44,7 @@ function App() {
         crossOrigin="anonymous"
       />
       <h1>Renan The student</h1>
-      <Navbar bg="light" expand="lg" className='Nav'>
+      <Navbar bg="light" expand="lg" >
       <Container>
         <Navbar.Brand href="#/RenanBazinin"><img src='https://cdn.pixabay.com/photo/2016/12/17/22/06/smiley-1914523_960_720.png' style={{width:"55px"}}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -47,11 +67,22 @@ function App() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+ 
+
+    <div className='About'>
+        
+        <select onChange={(e)=>{toggleLang(e)}}>
+          <option defaultValue >English</option>
+          <option>Hebraw</option>
+          </select>
+        </div>
+     
+        <br/>
       <Routes>
-        <Route path='/' element={<RenanBazinn/>}/>
-        <Route path='/RenanBazinin' element={<RenanBazinn/>}/>
+        <Route path='/' element={<RenanBazinn  />}/>
+        <Route path='/RenanBazinin/' element={<RenanBazinn/>}/>
         <Route path='/Projects' element={<Projects/>}/>
-        <Route path='/TimeLine' element={<TimeLine/>}/>
+        <Route path='/TimeLine' element={<TimeLine />}/>
         <Route path='/Stream' element={<Stream/>}/>
       </Routes>
 
