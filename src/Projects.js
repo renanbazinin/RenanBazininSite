@@ -1,11 +1,17 @@
 import React from 'react'
 import { Routes, Route, Link ,useNavigate} from "react-router-dom"
 import './App.css';
+
+import { useSelector } from "react-redux"
+
+
 export default function Projects() {
+  const storeData = useSelector(store => { return store })
     const navigate = useNavigate()
   return (
       
     <div>
+        {storeData.lang==="en"?"":"עוד לא כתבתי בעברית"}
         <h1>Projects</h1>
     <br/>
         <h5>Anamenztron</h5>
