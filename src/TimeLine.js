@@ -81,7 +81,7 @@ export default function TimeLine() {
     <h1></h1>
     <Timeline >
       <Event interval={"1998"} title={"יום הולדת"} subtitle={""} >
-        נודלתי בישראל
+        נולדתי בישראל
       </Event>
       <Event interval={"2014 – 2017"} title={"בית ספר"} subtitle={"תיכון קציר"}>
         למדתי בכיתת נחשון, כיתת מנהיגות.
