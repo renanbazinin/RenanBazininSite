@@ -18,6 +18,9 @@ import { useDispatch } from 'react-redux';
 
 function App() {
 
+
+
+
   const dispatch = useDispatch();
   const [lang,setLang] = useState('he');
 
@@ -29,7 +32,7 @@ function App() {
       else
         setLang("he")
       const langForRedux = e.target.value.toUpperCase()
-      alert(langForRedux)
+
         dispatch({type:langForRedux})
   }
 

@@ -12,11 +12,12 @@ function reducer(state = initialUserState, action) {
     switch (action.type) {
 
         case "ENGLISH":{
-            return "en"
+            return { ...state, lang:"en"};
+   
         }
             //return { ...state, allUsers:[...action.payload]};
         case "HEBRAW":
-            return "he"
+            return { ...state, lang:"he"};
 
         default:
             return state
