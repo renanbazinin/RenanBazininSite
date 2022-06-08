@@ -41,7 +41,8 @@ html{
 }
 
 footer{
-  margin-top: 5px;
+  
+  margin-top: 5%;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -61,4 +62,8 @@ a:visited {
 }
 .NormalLink:visited{
   color: rgb(153, 0, 255)
+}
+
+.OfHeap{
+  border-style: solid;
 }

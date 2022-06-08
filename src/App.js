@@ -4,6 +4,7 @@ import RenanBazinn from './RenanBazinn';
 import Projects from './Projects';
 import TimeLine from  './TimeLine'
 import Stream from './Comp/Stream';
+import HeapExam from './Comp/HeapExam'
 
 import {Nav , Navbar, NavLink,Container,NavDropdown}from 'react-bootstrap';
 
@@ -54,18 +55,19 @@ function App() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
        
-            <Nav.Link href="#/RenanBazinin">Renan Bazinin</Nav.Link>
-            <Nav.Link href="#/TimeLine">Time Line</Nav.Link>
-            <Nav.Link href="#/Projects">Projects</Nav.Link>
+    
+         
             
-            {/*<NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#"></NavDropdown.Item>
-              <NavDropdown.Item href="#"> </NavDropdown.Item>
+            <NavDropdown title="Renan Bazinin" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#/RenanBazinin">Renan Bazinin</NavDropdown.Item>
+              <NavDropdown.Item href="#/TimeLine">Time Line</NavDropdown.Item>
+              {/*
               <NavDropdown.Item href="#"></NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#"> </NavDropdown.Item>
+              */}
             </NavDropdown>
-          */}
+            <Nav.Link href="#/Projects">Projects</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -87,6 +89,7 @@ function App() {
         <Route path='/Projects' element={<Projects/>}/>
         <Route path='/TimeLine' element={<TimeLine />}/>
         <Route path='/Stream' element={<Stream/>}/>
+        <Route path='/HeapExam' element={<HeapExam/>}/>
       </Routes>
 
       <footer>
