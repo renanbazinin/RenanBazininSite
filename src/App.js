@@ -68,6 +68,7 @@ function App() {
               */}
             </NavDropdown>
             <Nav.Link href="#/Projects">Projects</Nav.Link>
+            <Nav.Link href="#/HeapExam">אלגוריתמים</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

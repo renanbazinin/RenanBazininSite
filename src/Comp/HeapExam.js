@@ -3,27 +3,103 @@ import React, { useState, useEffect } from 'react';
 export default function HeapExam() {
 
     const [stats, setStats] = useState({
+        sizeHeap:10,
         loop:0,
         timeEnd:20,
         inervalKey:0,
-        heap:[]
+        array:[],
+        heap:[],
+        sortedHeap:[],
+        bonus:false,
     
     });
     const [heap, setHeap] = useState([])
         
 
+    const heapify = (arr, n, i)=>
+    {
+        var largest = i; // Initialize largest as root
+        var l = 2 * i + 1; // left = 2*i + 1
+        var r = 2 * i + 2; // right = 2*i + 2
+ 
+        // If left child is larger than root
+        if (l < n && arr[l] > arr[largest])
+            largest = l;
+ 
+        // If right child is larger than largest so far
+        if (r < n && arr[r] > arr[largest])
+            largest = r;
+ 
+        // If largest is not root
+        if (largest != i) {
+            var swap = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = swap;
+ 
+            // Recursively heapify the affected sub-tree
+            heapify(arr, n, largest);
+        }
+    }
 
-    
+    const buildHeap = (arr,n)=>
+    {
+
+        let startIdx = (n / 2) - 1;
+ 
+
+        for (let i = startIdx; i >= 0; i--) {
+            heapify(arr, n, i);
+        }
+    }
+
     useEffect(() => {
 
       }, []);
 
+      const startRandomHeap =async()=>{
+          await setStats(statsPre  => {return {...stats,array:[]}});
+          for (let i=0;i<stats.sizeHeap-1;i++){
+              await setStats(statsPre  => {return {...stats,array:[...statsPre.array,Math.floor(Math.random() * 10)]}});
+        
+          }
+          await setStats(statsPre  => {return {...stats,array:[...statsPre.array,Math.floor(Math.random() * 10)]}});
+          ///Now makeHeap
 
+         // buildHeap(copyArray,copyArray.length)
+          //console.log(copyArray)
+      }
+
+      const makeHeap = async()=>{
+        const copyArray = [...stats.array];
+        buildHeap(copyArray,copyArray.length)
+        const copyHeap = [...stats.array];
+        ///sort
+        sortHeap(copyHeap)
+        setStats({...stats,sizeHeap:copyArray.length,sortedHeap:copyHeap,heap:copyArray})
+      }
+      const handleChange =(e)=>{
+        setStats({...stats,sizeHeap:e.target.value})
+      }
+
+      const sortHeap = (arr)=>{
+        let n = arr.length
+        for (let i = arr.length - 1; i >= 2; i--) {
+          // Move current root to end
+          var temp = arr[0];
+          arr[0] = arr[i];
+          arr[i] = temp;
+       
+          // call max heapify on the reduced heap
+          heapify(arr,i,0);
+      }
+      
+      }
+    /*
     const stopInterval =()=> 
     {
         clearInterval(stats.inervalKey)
     }
-    
+
     const startInterval =async ()=>{
         let newTime
         const interval = setInterval(async() => {
@@ -34,21 +110,56 @@ export default function HeapExam() {
 
             await setTimeout(async() => {
 
-                await setStats(statsPre  => {return {...stats,loop:statsPre.loop+1,inervalKey:interval,heap:[...statsPre.heap,Math.floor(Math.random() * 10)]}}); 
+                await setStats(statsPre  => {return {...stats,loop:statsPre.loop+1,inervalKey:interval,heap:[...statsPre.heap,Math.floor(Math.random() * 10)]}});
+                
+                
                 console.log(stats.loop)
                 await setHeap(array =>[...array,34]);               
             }, 1000);
 
             
-
+            const newHeap = [...stats.heap]
+            console.log(newHeap)
 
           }, 1000);
           
 
           console.log(stats.loop)
     }
+  */
+    const addHeap = ()=>{
+      let copyHeap = [...stats.heap]
+      let i = stats.sizeHeap+1
+   
+      let newPrint = Math.floor(Math.random() * 10);
+      copyHeap.push(newPrint)
+      while(i>1 && newPrint > copyHeap[Math.floor(i/2)]){
+        let temp = copyHeap[i]
+        copyHeap[i] =  copyHeap[Math.floor(i/2)];
+        copyHeap[Math.floor(i/2)] = temp;
+        i = Math.floor(i/2);
+    }
 
+    setStats({...stats,sizeHeap:stats.sizeHeap+1,heap:copyHeap,array:[...stats.array,newPrint]})
+  }
+    const removeFromHeap = ()=>{
+      let copyHeap = [...stats.heap]
+      let copyArray= [...stats.array]
+      let max = copyHeap[0];
+      copyHeap[0]=copyHeap[copyHeap.length-1]
+      heapify(copyHeap,stats.sizeHeap-1,0)
+      copyHeap.pop()
+      for(let i=0;i<copyArray.length;i++){
+        if(copyArray[i]===max)
+        {
+          copyArray.splice(i, 1); 
+          i=copyArray.length
 
+        }
+      }
+      setStats({...stats,sizeHeap:stats.sizeHeap-1,heap:copyHeap,array:copyArray})
+      
+    }
   return (
     <div className='About'>
         We have one printer. But, many computers.
@@ -59,20 +170,34 @@ export default function HeapExam() {
         <br/>
         1 - lowest priority
         <br/>
-        Every 1.5 second the printer is printing. <br/>
-        Every 1 second we got new job
-        <br/>
-        After 20 seconds stop
-        <br/><br/><br/>
-        Time: {stats.loop}<br/><br/>
-        <button onClick={startInterval}>Start</button>
-        <br/>
-        <button onClick={stopInterval}>Stop</button>
 
-        <br/>Our Orders:<br/>{stats.heap.map((num)=>{
-           return <span className='OfHeap'>num , </span>
+ 
+        <br/>
+        Number of print orders : <input type={"number"} value={stats.sizeHeap} onChange={handleChange}/>
+        <br/>       <button onClick={startRandomHeap}>Start</button>
+        <br/>Our Orders:<br/>{stats.array.map((num,i)=>{
+           return <span className='OfHeap' key={i}> {num} </span>
         })}
-
+        <br/>
+        <button onClick={makeHeap} >Step 1:</button><br/>
+        After MakeHeap:
+        <br/>
+        {stats.heap.map((num,i)=>{
+           return <span className='OfHeap' key={i}> {num} </span>
+        })}
+        <br/>
+        {stats.bonus?<div>
+          After sortHeap,
+          Bounus (sort for array):<br/>{stats.sortedHeap.map((num,i)=>{
+            return <span className='OfHeap' key={i}> {num} </span>
+          })}
+          <br/>
+        </div>:""}
+          <br/><br/>
+          {stats.heap.length>0?<div>
+            <button onClick={addHeap}>Add order needed to print</button><br/>
+            <button onClick={removeFromHeap}>Print!</button>
+          </div>:""}
     </div>
   )
 }
