@@ -19,6 +19,7 @@ export default function HeapExam() {
 
     const heapify = (arr, n, i)=>
     {
+    
         var largest = i; // Initialize largest as root
         var l = 2 * i + 1; // left = 2*i + 1
         var r = 2 * i + 2; // right = 2*i + 2
@@ -137,18 +138,24 @@ export default function HeapExam() {
       let i = stats.sizeHeap+1
    
       let newPrint = Math.floor(Math.random() * 10);
+      copyHeap.push(newPrint);
 
-      copyHeap.push(newPrint)
       while(i>=0 && newPrint > copyHeap[parentIndex(i)]){
      
         let temp = copyHeap[i]
         copyHeap[i] =  copyHeap[parentIndex(i)];
         copyHeap[parentIndex(i)] = temp;
         i = parentIndex(i)
+      
+    }
+    for(let j=0;j<i;j++)
+    {
+      if(copyHeap[j]==undefined)
+        copyHeap.splice(j, 1); 
     }
 
     await setStats({...stats,sizeHeap:stats.sizeHeap+1,heap:copyHeap,array:[...stats.array,newPrint]})
-    await setAction({stat:true})
+    await loadEffect()
   }
     const removeFromHeap = async()=>{
       await setAction({stat:false})
@@ -167,13 +174,19 @@ export default function HeapExam() {
         }
       }
       await setStats({...stats,sizeHeap:stats.sizeHeap-1,heap:copyHeap,array:copyArray})
-      
-      await setAction({stat:true})
- 
+      await loadEffect()
+
+  
       
     }  
 
 
+    const loadEffect = async()=>{
+       setTimeout(()=>{
+         setAction({stat:true})
+    }, 200);
+
+    }
   return (
     <div className='About'>
         We have one printer. But, many computers.
@@ -211,8 +224,8 @@ export default function HeapExam() {
         </div>:""}
           <br/><br/>
           {stats.heap.length>0?<div>
-            {action.stat?<button onClick={addHeap} >Add order needed to print</button>:"Wait"}<br/>
-            {action.stat?<button onClick={removeFromHeap}>Print!</button>:"Wait"}<br/>
+            {action.stat?<button onClick={addHeap} >Add order needed to print</button>:<img style={{"width":"60px"}} src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"></img>}<br/>
+            {action.stat?<button onClick={removeFromHeap}>Print!</button>:<img  style={{"width":"40px"}} src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"></img>}<br/>
           </div>:""}
     </div>
   )
