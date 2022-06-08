@@ -11,7 +11,7 @@ export default function HeapExam() {
         array:[],
         heap:[],
         sortedHeap:[],
-        bonus:true,    
+        bonus:false,    
     });
     const [heap, setHeap] = useState([])
     const [action,setAction] =useState({stat:true})
