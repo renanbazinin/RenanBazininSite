@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 export default function HeapExam() {
 
     const [stats, setStats] = useState({
+     
         sizeHeap:10,
         loop:0,
         timeEnd:20,
@@ -14,7 +15,7 @@ export default function HeapExam() {
     
     });
     const [heap, setHeap] = useState([])
-        
+    const [action,setAction] =useState({stat:true})
 
     const heapify = (arr, n, i)=>
     {
@@ -127,22 +128,30 @@ export default function HeapExam() {
           console.log(stats.loop)
     }
   */
-    const addHeap = ()=>{
+    const parentIndex = (i)=>{
+      return Math.floor((i-1)/2)
+    }
+    const addHeap = async()=>{
+      await setAction({stat:false})
       let copyHeap = [...stats.heap]
       let i = stats.sizeHeap+1
    
       let newPrint = Math.floor(Math.random() * 10);
+
       copyHeap.push(newPrint)
-      while(i>1 && newPrint > copyHeap[Math.floor(i/2)]){
+      while(i>=0 && newPrint > copyHeap[parentIndex(i)]){
+     
         let temp = copyHeap[i]
-        copyHeap[i] =  copyHeap[Math.floor(i/2)];
-        copyHeap[Math.floor(i/2)] = temp;
-        i = Math.floor(i/2);
+        copyHeap[i] =  copyHeap[parentIndex(i)];
+        copyHeap[parentIndex(i)] = temp;
+        i = parentIndex(i)
     }
 
-    setStats({...stats,sizeHeap:stats.sizeHeap+1,heap:copyHeap,array:[...stats.array,newPrint]})
+    await setStats({...stats,sizeHeap:stats.sizeHeap+1,heap:copyHeap,array:[...stats.array,newPrint]})
+    await setAction({stat:true})
   }
-    const removeFromHeap = ()=>{
+    const removeFromHeap = async()=>{
+      await setAction({stat:false})
       let copyHeap = [...stats.heap]
       let copyArray= [...stats.array]
       let max = copyHeap[0];
@@ -157,9 +166,14 @@ export default function HeapExam() {
 
         }
       }
-      setStats({...stats,sizeHeap:stats.sizeHeap-1,heap:copyHeap,array:copyArray})
+      await setStats({...stats,sizeHeap:stats.sizeHeap-1,heap:copyHeap,array:copyArray})
       
-    }
+      await setAction({stat:true})
+ 
+      
+    }  
+
+
   return (
     <div className='About'>
         We have one printer. But, many computers.
@@ -179,8 +193,10 @@ export default function HeapExam() {
            return <span className='OfHeap' key={i}> {num} </span>
         })}
         <br/>
-        <button onClick={makeHeap} >Step 1:</button><br/>
+        {stats.array.length>0?<div>
+        <button onClick={makeHeap} >Step 1 (makeHeap) :</button><br/>
         After MakeHeap:
+        </div>:""}
         <br/>
         {stats.heap.map((num,i)=>{
            return <span className='OfHeap' key={i}> {num} </span>
@@ -195,8 +211,8 @@ export default function HeapExam() {
         </div>:""}
           <br/><br/>
           {stats.heap.length>0?<div>
-            <button onClick={addHeap}>Add order needed to print</button><br/>
-            <button onClick={removeFromHeap}>Print!</button>
+            {action.stat?<button onClick={addHeap} >Add order needed to print</button>:"Wait"}<br/>
+            {action.stat?<button onClick={removeFromHeap}>Print!</button>:"Wait"}<br/>
           </div>:""}
     </div>
   )
