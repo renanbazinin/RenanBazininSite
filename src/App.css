@@ -8,13 +8,14 @@
 html{
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity));
+  margin-bottom: 5%;
 }
 
 
 
 .About{
   text-align: left;
- 
+  padding-bottom: 5px;
   margin-left: 20%;
   margin-right: 20%;
   background-color: white;
@@ -43,6 +44,7 @@ html{
 footer{
   
   margin-top: 5%;
+
   position: fixed;
   left: 0;
   bottom: 0;
