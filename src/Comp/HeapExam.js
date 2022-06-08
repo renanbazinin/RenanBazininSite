@@ -11,8 +11,7 @@ export default function HeapExam() {
         array:[],
         heap:[],
         sortedHeap:[],
-        bonus:false,
-    
+        bonus:true,    
     });
     const [heap, setHeap] = useState([])
     const [action,setAction] =useState({stat:true})
@@ -74,7 +73,8 @@ export default function HeapExam() {
       const makeHeap = async()=>{
         const copyArray = [...stats.array];
         buildHeap(copyArray,copyArray.length)
-        const copyHeap = [...stats.array];
+        //copy array is heap by this time :D
+        const copyHeap = [...copyArray];
         ///sort
         sortHeap(copyHeap)
         setStats({...stats,sizeHeap:copyArray.length,sortedHeap:copyHeap,heap:copyArray})
@@ -85,7 +85,7 @@ export default function HeapExam() {
 
       const sortHeap = (arr)=>{
         let n = arr.length
-        for (let i = arr.length - 1; i >= 2; i--) {
+        for (let i = arr.length - 1; i > 0; i--) {
           // Move current root to end
           var temp = arr[0];
           arr[0] = arr[i];
@@ -96,39 +96,7 @@ export default function HeapExam() {
       }
       
       }
-    /*
-    const stopInterval =()=> 
-    {
-        clearInterval(stats.inervalKey)
-    }
 
-    const startInterval =async ()=>{
-        let newTime
-        const interval = setInterval(async() => {
- 
-        
-
-
-
-            await setTimeout(async() => {
-
-                await setStats(statsPre  => {return {...stats,loop:statsPre.loop+1,inervalKey:interval,heap:[...statsPre.heap,Math.floor(Math.random() * 10)]}});
-                
-                
-                console.log(stats.loop)
-                await setHeap(array =>[...array,34]);               
-            }, 1000);
-
-            
-            const newHeap = [...stats.heap]
-            console.log(newHeap)
-
-          }, 1000);
-          
-
-          console.log(stats.loop)
-    }
-  */
     const parentIndex = (i)=>{
       return Math.floor((i-1)/2)
     }
