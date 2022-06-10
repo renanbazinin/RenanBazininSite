@@ -13,7 +13,7 @@ export default function HeapExam() {
         sortedHeap:[],
         bonus:false,    
     });
-    const [heap, setHeap] = useState([])
+    const [err, setErr] = useState(false)
     const [action,setAction] =useState({stat:true})
 
     const heapify = (arr, n, i)=>
@@ -37,7 +37,7 @@ export default function HeapExam() {
             arr[i] = arr[largest];
             arr[largest] = swap;
  
-            // Recursively heapify the affected sub-tree
+       
             heapify(arr, n, largest);
         }
     }
@@ -80,7 +80,11 @@ export default function HeapExam() {
         setStats({...stats,sizeHeap:copyArray.length,sortedHeap:copyHeap,heap:copyArray})
       }
       const handleChange =(e)=>{
-        setStats({...stats,sizeHeap:e.target.value})
+        if(e.target.value > 1)
+          setStats({...stats,sizeHeap:e.target.value})
+        else{
+          setErr(true)
+        }
       }
 
       const sortHeap = (arr)=>{
@@ -101,14 +105,15 @@ export default function HeapExam() {
       return Math.floor((i-1)/2)
     }
     const addHeap = async()=>{
+      setErr(false)
       await setAction({stat:false})
       let copyHeap = [...stats.heap]
       let i = stats.sizeHeap+1
    
       let newPrint = Math.floor(Math.random() * 10);
       copyHeap.push(newPrint);
-
-      while(i>=0 && newPrint > copyHeap[parentIndex(i)]){
+      
+      while(i>1 && newPrint > copyHeap[parentIndex(i)]){
      
         let temp = copyHeap[i]
         copyHeap[i] =  copyHeap[parentIndex(i)];
@@ -122,10 +127,17 @@ export default function HeapExam() {
         copyHeap.splice(j, 1); 
     }
 
-    await setStats({...stats,sizeHeap:stats.sizeHeap+1,heap:copyHeap,array:[...stats.array,newPrint]})
+    await setStats({...stats,sizeHeap:copyHeap.length,heap:copyHeap,array:[...stats.array,newPrint]})
     await loadEffect()
   }
     const removeFromHeap = async()=>{
+      if(stats.sizeHeap <= 1)
+      {
+        setErr(true)
+        return
+      }
+
+ 
       await setAction({stat:false})
       let copyHeap = [...stats.heap]
       let copyArray= [...stats.array]
@@ -141,7 +153,7 @@ export default function HeapExam() {
 
         }
       }
-      await setStats({...stats,sizeHeap:stats.sizeHeap-1,heap:copyHeap,array:copyArray})
+      await setStats({...stats,sizeHeap:copyHeap.length,heap:copyHeap,array:copyArray})
       await loadEffect()
 
   
@@ -191,8 +203,10 @@ export default function HeapExam() {
           <br/>
         </div>:""}
           <br/><br/>
+          {err?"Size must bigger than 1":""}
+          <br/>
           {stats.heap.length>0?<div>
-            {action.stat?<button onClick={addHeap} >Add order needed to print</button>:<img style={{"width":"60px"}} src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"></img>}<br/>
+            {false?<button onClick={addHeap} >Add order needed to print</button>:""}<br/>
             {action.stat?<button onClick={removeFromHeap}>Print!</button>:<img  style={{"width":"40px"}} src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"></img>}<br/>
           </div>:""}
     </div>
