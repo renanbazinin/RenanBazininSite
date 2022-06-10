@@ -45,7 +45,7 @@ export default function HeapExam() {
     const buildHeap = (arr,n)=>
     {
 
-        let startIdx = (n / 2) - 1;
+        let startIdx = Math.floor(n / 2) - 1;
  
 
         for (let i = startIdx; i >= 0; i--) {
@@ -60,10 +60,10 @@ export default function HeapExam() {
       const startRandomHeap =async()=>{
           await setStats(statsPre  => {return {...stats,array:[]}});
           for (let i=0;i<stats.sizeHeap-1;i++){
-              await setStats(statsPre  => {return {...stats,array:[...statsPre.array,Math.floor(Math.random() * 10)]}});
+              await setStats(statsPre  => {return {...stats,array:[...statsPre.array,Math.floor(Math.random() * 10)+1]}});
         
           }
-          await setStats(statsPre  => {return {...stats,array:[...statsPre.array,Math.floor(Math.random() * 10)]}});
+          await setStats(statsPre  => {return {...stats,array:[...statsPre.array,Math.floor(Math.random() * 10)+1]}});
           ///Now makeHeap
 
          // buildHeap(copyArray,copyArray.length)
@@ -108,12 +108,12 @@ export default function HeapExam() {
       setErr(false)
       await setAction({stat:false})
       let copyHeap = [...stats.heap]
-      let i = stats.sizeHeap+1
-   
-      let newPrint = Math.floor(Math.random() * 10);
+      let i = stats.sizeHeap
+ 
+      let newPrint = Math.floor(Math.random() * 10)+1;
       copyHeap.push(newPrint);
-      
-      while(i>1 && newPrint > copyHeap[parentIndex(i)]){
+
+      while(parentIndex(i)>=0 && copyHeap[parentIndex(i)]>0 && newPrint > copyHeap[parentIndex(i)]){
      
         let temp = copyHeap[i]
         copyHeap[i] =  copyHeap[parentIndex(i)];
@@ -121,11 +121,8 @@ export default function HeapExam() {
         i = parentIndex(i)
       
     }
-    for(let j=0;j<i;j++)
-    {
-      if(copyHeap[j]==undefined)
-        copyHeap.splice(j, 1); 
-    }
+
+
 
     await setStats({...stats,sizeHeap:copyHeap.length,heap:copyHeap,array:[...stats.array,newPrint]})
     await loadEffect()
@@ -206,7 +203,7 @@ export default function HeapExam() {
           {err?"Size must bigger than 1":""}
           <br/>
           {stats.heap.length>0?<div>
-            {false?<button onClick={addHeap} >Add order needed to print</button>:""}<br/>
+            {action.stat?<button onClick={addHeap} >Add order needed to print</button>:""}<br/>
             {action.stat?<button onClick={removeFromHeap}>Print!</button>:<img  style={{"width":"40px"}} src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"></img>}<br/>
           </div>:""}
     </div>
