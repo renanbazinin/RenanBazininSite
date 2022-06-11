@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from "react-redux"
 
 export default function HeapExam() {
 
+  const storeData = useSelector(store => { return store })
     const [stats, setStats] = useState({
      
         sizeHeap:10,
@@ -165,47 +167,55 @@ export default function HeapExam() {
 
     }
   return (
-    <div className='About'>
-        We have one printer. But, many computers.
-        <br/>
-        Every computer has different priority. 
-        <br/>From 1 to 10.<br/>
-        10 - Highest priority
-        <br/>
-        1 - lowest priority
-        <br/>
+    <div>
+      {storeData.lang==="en"?
+      <div className='About'>
+          We have one printer. But, many computers.
+          <br/>
+          Every computer has different priority. 
+          <br/>From 1 to 10.<br/>
+          10 - Highest priority
+          <br/>
+          1 - lowest priority
+          <br/>
 
- 
-        <br/>
-        Number of print orders : <input type={"number"} value={stats.sizeHeap} onChange={handleChange}/>
-        <br/>       <button onClick={startRandomHeap}>Start</button>
-        <br/>Our Orders:<br/>{stats.array.map((num,i)=>{
-           return <span className='OfHeap' key={i}> {num} </span>
-        })}
-        <br/>
-        {stats.array.length>0?<div>
-        <button onClick={makeHeap} >Step 1 (makeHeap) :</button><br/>
-        After MakeHeap:
-        </div>:""}
-        <br/>
-        {stats.heap.map((num,i)=>{
-           return <span className='OfHeap' key={i}> {num} </span>
-        })}
-        <br/>
-        {stats.bonus?<div>
-          After sortHeap,
-          Bounus (sort for array):<br/>{stats.sortedHeap.map((num,i)=>{
+  
+          <br/>
+          Number of print orders : <input type={"number"} value={stats.sizeHeap} onChange={handleChange}/>
+          <br/>       <button onClick={startRandomHeap}>Start</button>
+          <br/>Our Orders:<br/>{stats.array.map((num,i)=>{
             return <span className='OfHeap' key={i}> {num} </span>
           })}
           <br/>
-        </div>:""}
-          <br/><br/>
-          {err?"Size must bigger than 1":""}
-          <br/>
-          {stats.heap.length>0?<div>
-            {action.stat?<button onClick={addHeap} >Add order needed to print</button>:""}<br/>
-            {action.stat?<button onClick={removeFromHeap}>Print!</button>:<img  style={{"width":"40px"}} src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"></img>}<br/>
+          {stats.array.length>0?<div>
+          <button onClick={makeHeap} >Step 1 (makeHeap) :</button><br/>
+          After MakeHeap:
           </div>:""}
+          <br/>
+          {stats.heap.map((num,i)=>{
+            return <span className='OfHeap' key={i}> {num} </span>
+          })}
+          <br/>
+          {stats.bonus?<div>
+            After sortHeap,
+            Bounus (sort for array):<br/>{stats.sortedHeap.map((num,i)=>{
+              return <span className='OfHeap' key={i}> {num} </span>
+            })}
+            <br/>
+          </div>:""}
+            <br/><br/>
+            {err?"Size must bigger than 1":""}
+            <br/>
+            {stats.heap.length>0?<div>
+              {action.stat?<button onClick={addHeap} >Add order needed to print</button>:""}<br/>
+              {action.stat?<button onClick={removeFromHeap}>Print!</button>:<img  style={{"width":"40px"}} src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"></img>}<br/>
+            </div>:""}
+
+      </div>:
+          <div>
+            
+          </div>
+      }
     </div>
   )
 }

@@ -5,6 +5,7 @@ import Projects from './Projects';
 import TimeLine from  './TimeLine'
 import Stream from './Comp/Stream';
 import HeapExam from './Comp/HeapExam'
+import Algorithms from './Comp/Algorithms';
 
 import {Nav , Navbar, NavLink,Container,NavDropdown}from 'react-bootstrap';
 
@@ -39,7 +40,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App" >
     
       <link
           rel="stylesheet"
@@ -49,7 +50,7 @@ function App() {
       />
       <h1>Renan The student</h1>
       <Navbar bg="light" expand="lg" >
-      <Container>
+      <Container >
         <Navbar.Brand href="#/RenanBazinin"><img src='https://cdn.pixabay.com/photo/2016/12/17/22/06/smiley-1914523_960_720.png' style={{width:"55px"}}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -68,7 +69,7 @@ function App() {
               */}
             </NavDropdown>
             <Nav.Link href="#/Projects">Projects</Nav.Link>
-            <Nav.Link href="#/HeapExam">אלגוריתמים</Nav.Link>
+            <Nav.Link href="#/Algorithms">אלגוריתמים</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -84,13 +85,17 @@ function App() {
         </div>
      
         <br/>
-      <Routes>
+      <Routes >
         <Route path='/' element={<RenanBazinn  />}/>
         <Route path='/RenanBazinin/' element={<RenanBazinn/>}/>
         <Route path='/Projects' element={<Projects/>}/>
         <Route path='/TimeLine' element={<TimeLine />}/>
         <Route path='/Stream' element={<Stream/>}/>
-        <Route path='/HeapExam' element={<HeapExam/>}/>
+        <Route path='/Algorithms' element={<Algorithms/>}>
+          <Route path="HeapExam" element={<HeapExam />} />
+   
+
+        </Route>
       </Routes>
 
       <footer>
