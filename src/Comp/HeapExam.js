@@ -207,8 +207,8 @@ export default function HeapExam() {
             {err?"Size must bigger than 1":""}
             <br/>
             {stats.heap.length>0?<div>
-              {action.stat?<button onClick={addHeap} >Add order needed to print</button>:""}<br/>
-              {action.stat?<button onClick={removeFromHeap}>Print!</button>:<img  style={{"width":"40px"}} src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"></img>}<br/>
+              {action.stat?<button onClick={addHeap} >Add order needed to print</button>:<button>Wait</button>}<br/>
+              {action.stat?<button onClick={removeFromHeap}>Print!</button>:<img  style={{"width":"50px"}} src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"></img>}<br/>
             </div>:""}
 
       </div>:
