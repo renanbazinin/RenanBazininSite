@@ -167,7 +167,7 @@ export default function HeapExam() {
 
     }
   return (
-    <div className='algo-some' >
+    <div >
       {storeData.lang==="en"?
       <div  className='About'>
           We have one printer. But, many computers.
