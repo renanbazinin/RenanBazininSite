@@ -1,6 +1,8 @@
 .App {
   text-align: center;
-
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 
@@ -72,35 +74,42 @@ a:visited {
 
 
 .algo-comp{
-  display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
+  
+    display: flex;
+    flex-direction: column;
+  
+
     
 }
 
 .algo-navigation {
 
-  width: 10%;
-  margin: 5%;
+
+
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
+  width: 50%;
+  padding: 2%;
 }
 
 .algo-some {
   
   display: flex;
-  flex-direction: column;
-  width: 80%;
+  flex-direction: row;
+  justify-content: center;
+
+
 }
 
 .button-space{
+  width: auto;
   margin: 10px;
+  
 }
 
 .button-space:hover{
-  margin: 10px;
+  
   color: red;
 }
 

@@ -21,20 +21,24 @@ export default function Algorithms() {
        btc.className='button-pressed';
       
     } 
-    navigate("HeapExam")
+   
   }
 
 
     const navigate = useNavigate()
   return (
     <div className='algo-comp' >
-        <div className='algo-navigation'>
+        <div >
 
-    <button  onClick={(e)=>{handleNav(e)}} className='button-space'>Heap</button>
-    <button  onClick={(e)=>{handleNav(e)}} className='button-space'>Fake1</button>
+    <button  onClick={(e)=>{handleNav(e); navigate("HeapExam") }} className='button-space'>Heap</button>
+    <button  onClick={(e)=>{handleNav(e);navigate("")}} className='button-space'>Fake1</button>
     <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake2</button>
     <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake3</button>
     <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake4</button>
+    <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake5</button>
+    <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake6</button>
+    <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake7</button>
+    <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake8</button>
       </div>
         <div className='algo-some '>
 
