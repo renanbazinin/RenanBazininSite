@@ -25,7 +25,7 @@ export default function RenanBazinn() {
                   <li>ASP.net from high school</li>
                   <li>React advanced JavaScript from kernelios (inculding Async programming and Callback function)</li>
                   <li>Excel (inculding VBA)</li>
-                  <li>Hebraw-Native language</li>
+                  <li>Hebrew-Native language</li>
                   <li>English-very good. score 142/150 in psychometry exam</li>
               </ul>
             </div>     
