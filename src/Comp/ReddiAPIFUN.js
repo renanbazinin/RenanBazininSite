@@ -8,6 +8,7 @@ export default function ReddiAPIFUN() {
     const [data, setData] = useState(null);
     const [memes, setMemes] = useState(null);
     const pullReddit =async ()=>{
+        await setData(null)
         await setMemes(null)
         const raw = await axios.get(`https://www.reddit.com/r/ani_bm/top.json?limit=10&t=week`)
         await setData((raw.data.data.children))
