@@ -61,7 +61,7 @@ function App() {
     
          
             
-            <NavDropdown title="Renan Bazinin" id="basic-nav-dropdown">
+            <NavDropdown title="About Me" id="basic-nav-dropdown">
               <NavDropdown.Item href="#/RenanBazinin">Renan Bazinin</NavDropdown.Item>
               <NavDropdown.Item href="#/TimeLine">Time Line</NavDropdown.Item>
               {/*
@@ -71,16 +71,17 @@ function App() {
               */}
             </NavDropdown>
             <Nav.Link href="#/Projects">Projects</Nav.Link>
-            <Nav.Link href="#/Algorithms">אלגוריתמים</Nav.Link>
+         
 
             {///Random stuff
             }
-              <Nav.Link href="#/Algorithms"></Nav.Link>
-             <NavDropdown title="Random For Practice Stuff" id="basic-nav-dropdown">
+              <NavDropdown  title="Random For Practice Stuff" id="basic-nav-dropdown">
               <NavDropdown.Item href="#/ReddiAPIFUN">Reddit API</NavDropdown.Item>
-  
-  
             </NavDropdown>
+
+
+           <Nav.Link href="#/Algorithms" style={{"marginLeft":"100%"}}>אלגוריתמים</Nav.Link>
+
 
           </Nav>
         </Navbar.Collapse>

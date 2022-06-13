@@ -8,6 +8,7 @@ export default function ReddiAPIFUN() {
     const [data, setData] = useState(null);
     const [memes, setMemes] = useState(null);
     const pullReddit =async ()=>{
+        await setMemes(null)
         const raw = await axios.get(`https://www.reddit.com/r/ani_bm/top.json?limit=10&t=week`)
         await setData((raw.data.data.children))
         console.table((raw.data.data.children[9].data))
@@ -28,7 +29,8 @@ export default function ReddiAPIFUN() {
   return (
     <div>
 
-    <button onClick={randomPost}>memes Subreddit</button>
+    <button onClick={randomPost}>memes Subreddit </button>OR 
+    <button onClick={pullReddit}> Ani_bm Subreddit</button>
       {memes===null? <h1>Top 10 ani_bm subreddit</h1>:<h1>Top 10 memes subreddit</h1>}
         
         <br/>
