@@ -20,7 +20,7 @@ export default function ReddiAPIFUN() {
 
     const randomPost = async()=>{
         await setData(null)
-        const raw = await axios.get(`https://www.reddit.com/r/memes/top.json?limit=10&t=year`)
+        const raw = await axios.get(`https://www.reddit.com/r/memes/top.json?limit=10&t=week`)
         await setData((raw.data.data.children))
         console.table((raw.data.data.children[9].data))
       }
