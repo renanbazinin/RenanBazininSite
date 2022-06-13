@@ -8,7 +8,7 @@ export default function ReddiAPIFUN() {
     const [data, setData] = useState([]);
 
     const pullReddit =async ()=>{
-        const raw = await axios.get(`https://www.reddit.com/r/ani_bm/top.json?limit=10&t=month`)
+        const raw = await axios.get(`https://www.reddit.com/r/ani_bm/top.json?limit=10&t=week`)
         await setData((raw.data.data.children))
         console.table((raw.data.data.children[9].data))
     }
