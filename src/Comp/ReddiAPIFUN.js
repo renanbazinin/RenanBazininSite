@@ -40,7 +40,7 @@ export default function ReddiAPIFUN() {
                     <br/>
                     {kid.data.is_video?<video controls="" autoplay="" name="media">
                     <source src={kid.data.secure_media.reddit_video.scrubber_media_url} type="video/mp4"/>
-                    </video>:<img src={kid.data.url} width={"200px"}/>}
+                    </video>:<img src={kid.data.url} width={"300px"}/>}
                     
                     <br/>
                     </div>
