@@ -6,6 +6,8 @@ import TimeLine from  './TimeLine'
 import Stream from './Comp/Stream';
 import HeapExam from './Comp/HeapExam'
 import Algorithms from './Comp/Algorithms';
+import ReddiAPIFUN from './Comp/ReddiAPIFUN'
+
 
 import {Nav , Navbar, NavLink,Container,NavDropdown}from 'react-bootstrap';
 
@@ -94,6 +96,10 @@ function App() {
         <Route path='/Algorithms' element={<Algorithms/>}>
           <Route path="HeapExam" element={<HeapExam />} />
    
+
+        </Route>
+        <Route path='/ReddiAPIFUN' element={<ReddiAPIFUN/>}>
+    
 
         </Route>
       </Routes>
