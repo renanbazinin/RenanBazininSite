@@ -72,6 +72,16 @@ function App() {
             </NavDropdown>
             <Nav.Link href="#/Projects">Projects</Nav.Link>
             <Nav.Link href="#/Algorithms">אלגוריתמים</Nav.Link>
+
+            {///Random stuff
+            }
+              <Nav.Link href="#/Algorithms"></Nav.Link>
+             <NavDropdown title="Random For Practice Stuff" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#/ReddiAPIFUN">Reddit API</NavDropdown.Item>
+  
+  
+            </NavDropdown>
+
           </Nav>
         </Navbar.Collapse>
       </Container>
