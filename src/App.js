@@ -7,7 +7,7 @@ import Stream from './Comp/Stream';
 import HeapExam from './Comp/HeapExam'
 import Algorithms from './Comp/Algorithms';
 import ReddiAPIFUN from './Comp/ReddiAPIFUN'
-
+import GuessTheSub from './Comp/GuessTheSub'
 
 import {Nav , Navbar, NavLink,Container,NavDropdown}from 'react-bootstrap';
 
@@ -77,6 +77,7 @@ function App() {
             }
               <NavDropdown  title="Random For Practice Stuff" id="basic-nav-dropdown">
               <NavDropdown.Item href="#/ReddiAPIFUN">Reddit API</NavDropdown.Item>
+              <NavDropdown.Item href="#/GuessTheSub">Guess The Subreddit</NavDropdown.Item>
             </NavDropdown>
 
 
@@ -109,10 +110,10 @@ function App() {
    
 
         </Route>
-        <Route path='/ReddiAPIFUN' element={<ReddiAPIFUN/>}>
-    
+        <Route path='/ReddiAPIFUN' element={<ReddiAPIFUN/>}/>
+        <Route path='/GuessTheSub' element={<GuessTheSub/>}/>
 
-        </Route>
+    
       </Routes>
 
       <footer>
