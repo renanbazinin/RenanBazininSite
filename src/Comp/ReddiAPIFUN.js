@@ -12,7 +12,9 @@ export default function ReddiAPIFUN() {
         await setMemes(null)
         const raw = await axios.get(`https://www.reddit.com/r/ani_bm/top.json?limit=10&t=week`)
         await setData((raw.data.data.children))
+
         console.table((raw.data.data.children[9].data))
+        console.log("Is video? " + raw.data.data.children[9].data.selftext_html)
     }
 
       useEffect(() => {
@@ -26,6 +28,7 @@ export default function ReddiAPIFUN() {
         const raw = await axios.get(`https://www.reddit.com/r/rickandmorty/top.json?limit=10&t=week`)
         await setData((raw.data.data.children))
         console.table((raw.data.data.children[9].data))
+
       }
   return (
     <div>
@@ -42,9 +45,10 @@ export default function ReddiAPIFUN() {
                     <br/>
                     <h4>Place {i+1}: {kid.data.title}</h4>
                     <br/>
-                    {kid.data.is_video?<video controls="" autoplay="" name="media">
-                    <source src={kid.data.secure_media.reddit_video.scrubber_media_url} type="video/mp4"/>
-                    </video>:<img src={kid.data.url} width={"300px"}/>}
+                    {kid.data.is_video===true?<video autoPlay name="media" width={"500px"}>
+                    <source src={kid.data.media.reddit_video.fallback_url} type="video/mp4"/>
+                    </video>:kid.data.selftext.length>1?<div>{kid.data.selftext_html}</div>:kid.data.post_hint==="image"?
+                    <img src={kid.data.url} width={"300px"}/>:"shit"}
                     
                     <br/>
                     </div>

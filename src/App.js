@@ -80,15 +80,16 @@ function App() {
               <NavDropdown.Item href="#/GuessTheSub">Guess The Subreddit</NavDropdown.Item>
             </NavDropdown>
 
-
-           <Nav.Link href="#/Algorithms" style={{"marginLeft":"100%"}}>אלגוריתמים</Nav.Link>
+            
+           <Nav.Link href="#/Algorithms">אלגוריתמים</Nav.Link>
 
 
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
- 
+
+   
 
     <div className='About'>
         
