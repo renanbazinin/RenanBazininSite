@@ -53,7 +53,7 @@ function App() {
       <h1>Renan The student</h1>
       <Navbar bg="light" expand="lg" >
       <Container >
-        <Navbar.Brand href="#/RenanBazinin"><img src='https://cdn.pixabay.com/photo/2016/12/17/22/06/smiley-1914523_960_720.png' style={{width:"55px"}}/></Navbar.Brand>
+        <Navbar.Brand href="#/RenanBazinin"><img src='https://i.imgur.com/Eb5gEmq.png' style={{width:"55px"}}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
