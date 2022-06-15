@@ -76,8 +76,9 @@ function App() {
             {///Random stuff
             }
               <NavDropdown  title="Random For Practice Stuff" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#/ReddiAPIFUN">Reddit API</NavDropdown.Item>
+              
               <NavDropdown.Item href="#/GuessTheSub">Guess The Subreddit</NavDropdown.Item>
+              <NavDropdown.Item href="#/ReddiAPIFUN">Reddit API - Top 10 posts</NavDropdown.Item>
             </NavDropdown>
 
             
