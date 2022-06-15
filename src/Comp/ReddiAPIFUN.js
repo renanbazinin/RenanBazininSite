@@ -35,7 +35,7 @@ export default function ReddiAPIFUN() {
 
     <button onClick={randomPost}>RickAndMory Subreddit </button>OR 
     <button onClick={pullReddit}> Ani_bm Subreddit</button>
-      {memes===null? <h1>Top 10 ani_bm subreddit</h1>:<h1>Top 10 RickAndMory subreddit</h1>}
+      {memes===null? <h1>Top 10 ani_bm subreddit - week </h1>:<h1>Top 10 RickAndMory subreddit - week</h1>}
         
         <br/>
         {data!=null?

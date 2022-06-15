@@ -7,7 +7,7 @@ export default function RenanBazinn() {
       {storeData.lang==="en"?"":"עוד לא כתבתי בעברית"}
         <h1>Renan Bazinin</h1>
         I'm a new student to computer science.  I have always had a passion for computers
-        <h4>Points about me in this world</h4>
+        <h4>Points about me</h4>
             <div>
             <ul>
                   <li>I studied at a program called computational science in Davidson institute and also software engineering (15 points in the Bagrut).</li>
