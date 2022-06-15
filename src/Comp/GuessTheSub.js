@@ -64,7 +64,7 @@ export default function GuessTheSub() {
 
     <div style={{"display":"flex" , "flexDirection":"column","justifyContent":"center","width": "100%"}}>
         {!score.waiting&&score.correct?<h1 style={{"color":"green"}}>WOW! +1 for you dude!</h1>:!score.waiting?<h1 style={{"color":"red"}}>Wrong! You need to know more reddit</h1>:""}
-        {!score.waiting?<span>The correct ans is {subChose} <br/> <a href={`https://reddit.com${lastPostLink}`}>Here is the link to the post</a></span>:""}
+        {!score.waiting?<span>The correct ans is {subChose} <br/> <a href={`https://reddit.com${lastPostLink}`}  target="_blank" rel="noopener noreferrer" >Here is the link to the post</a></span>:""}
         <h2>Score : {score.score}</h2>
         <button onClick={pullReddit} style={{"width":"60%","alignSelf":"center"}}>Random</button>
         <br/>
