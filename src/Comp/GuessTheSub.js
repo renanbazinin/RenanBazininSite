@@ -9,6 +9,7 @@ export default function GuessTheSub() {
     const [randOrder,setRandOrder] =useState(0)
     const [subChose, setSubChose] = useState(null);
     const [data, setData] = useState(null);
+    const [lastPostLink, setLastPostLink] = useState(null);
     const [subsRND,setSubsRND] = useState([])
     const [score,setScore] = useState({correct:false,score:0,waiting:true})
     const playerGuessed = (e)=>{
@@ -34,6 +35,7 @@ export default function GuessTheSub() {
 
         console.table(((rawFromSub.data.data.children[indexRnd])))
         await setData(rawFromSub.data.data.children[indexRnd])
+        await setLastPostLink(rawFromSub.data.data.children[indexRnd].data.permalink)
         if(rawFromSub.data.data.children[indexRnd].data.media !== null)
           console.log(((rawFromSub.data.data.children[indexRnd].data.media.hls_url)))
         ////RANDOM SUB FUN
@@ -62,7 +64,7 @@ export default function GuessTheSub() {
 
     <div style={{"display":"flex" , "flexDirection":"column","justifyContent":"center","width": "100%"}}>
         {!score.waiting&&score.correct?<h1 style={{"color":"green"}}>WOW! +1 for you dude!</h1>:!score.waiting?<h1 style={{"color":"red"}}>Wrong! You need to know more reddit</h1>:""}
-        {!score.waiting?<span>The correct ans is {subChose} <br/> <a href={`https://reddit.com${data.data.permalink}`}>Here is the link to the post</a></span>:""}
+        {!score.waiting?<span>The correct ans is {subChose} <br/> <a href={`https://reddit.com${lastPostLink}`}>Here is the link to the post</a></span>:""}
         <h2>Score : {score.score}</h2>
         <button onClick={pullReddit} style={{"width":"60%","alignSelf":"center"}}>Random</button>
         <br/>
