@@ -50,7 +50,7 @@ function App() {
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
         crossOrigin="anonymous"
       />
-      <h1>Renan The student</h1>
+      <h1>Renan The Student</h1>
       <Navbar bg="light" expand="lg" >
       <Container >
         <Navbar.Brand href="#/RenanBazinin"><img src='https://i.imgur.com/Eb5gEmq.png' style={{width:"55px"}}/></Navbar.Brand>
