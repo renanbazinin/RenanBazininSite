@@ -6,12 +6,22 @@ import axios from 'axios'
 
 export default function GuessTheSub() {
 
+    const [randOrder,setRandOrder] =useState(0)
     const [subChose, setSubChose] = useState(null);
     const [data, setData] = useState(null);
+    const [subsRND,setSubsRND] = useState([])
+    const [score,setScore] = useState({correct:false,score:0,waiting:true})
+    const playerGuessed = (e)=>{
+      const currentScore = score.score
+      if(e.target.innerHTML === subChose)
+        setScore({correct:true,score:currentScore+1,waiting:false})
 
+    }
     const pullReddit =async ()=>{
       await setData(null)
-
+      await setRandOrder(Math.floor(Math.random() * 3))
+      await setSubsRND(null)
+      await setScore({...score,waiting:true})
         const raw = await axios.get(`https://www.reddit.com/subreddits/popular.json`)
         const subRan = (raw.data.data.children[Math.floor(Math.random() * 25)].data.display_name_prefixed)
         await setSubChose(subRan)
@@ -19,10 +29,24 @@ export default function GuessTheSub() {
         
         const rawFromSub = await axios.get(`https://www.reddit.com/${subRan}/top.json?limit=10&t=week`)
         const indexRnd =Math.floor(Math.random() * 10)
+
         console.table(((rawFromSub.data.data.children[indexRnd])))
+        await setData(rawFromSub.data.data.children[indexRnd])
         if(rawFromSub.data.data.children[indexRnd].data.media !== null)
           console.log(((rawFromSub.data.data.children[indexRnd].data.media.hls_url)))
-        await setData((rawFromSub.data.data.children[indexRnd]))
+        ////RANDOM SUB FUN
+        const arrayOfRndSub =[]
+        while(arrayOfRndSub.length <3 ){
+
+          let popPost = await axios.get(`https://www.reddit.com/subreddits/popular.json`)
+          let findSub = (popPost.data.data.children[Math.floor(Math.random() * 25)].data.display_name_prefixed)
+          if(findSub != subChose)
+            arrayOfRndSub.push(findSub)
+
+        }
+        await setSubsRND(arrayOfRndSub)
+        
+        
     }
 
       useEffect(() => {
@@ -35,11 +59,12 @@ export default function GuessTheSub() {
 
 
     <div style={{"display":"flex" , "flexDirection":"column","justifyContent":"center","width": "100%"}}>
-
+        {!score.waiting&&score.correct?<h1>WOW! +1 for you man!</h1>:!score.waiting?<h1>Wrong! You need to know more reddit</h1>:""}
+        <h2>Score : {score.score}</h2>
         <button onClick={pullReddit} style={{"width":"60%","alignSelf":"center"}}>Random</button>
         <br/>
         GuessTheSub<br/>
-        {subChose!==null?subChose:"Finding you something funny"}
+        {!score.waiting?subChose:""}
         <br/><br/><br/>
         {data!==null?
         <div>
@@ -57,13 +82,42 @@ export default function GuessTheSub() {
                  
                     <a href={data.data.url_overridden_by_dest}>Link!</a>
                     :data.data.selftext.length>1?<div>{data.data.selftext}</div>:
-                    "He didn't write "
+                    "He didn't write in body. Only title "
                     
                     }
 
         </div>:
         "Finding you something funny"}
-
+      <br/>
+      {subsRND!==null&&score.waiting?<div>
+        {randOrder===0?<div>
+          <button onClick={(e)=>playerGuessed(e)}>{subChose}</button>
+          <button onClick={(e)=>playerGuessed(e)}>{subsRND[0]}</button>
+          <button onClick={(e)=>playerGuessed(e)}>{subsRND[1]}</button>
+          <button onClick={(e)=>playerGuessed(e)}>{subsRND[2]}</button>
+          </div>:
+        
+        randOrder===1?
+        <div>
+          <button onClick={(e)=>playerGuessed(e)}>{subsRND[0]}</button>
+          <button onClick={(e)=>playerGuessed(e)}>{subChose}</button>
+          <button onClick={(e)=>playerGuessed(e)}>{subsRND[1]}</button>
+          <button onClick={(e)=>playerGuessed(e)}>{subsRND[2]}</button>
+          </div>:
+       randOrder ===2?
+        <div>
+          <button onClick={(e)=>playerGuessed(e)}>{subsRND[1]}</button>
+          <button onClick={(e)=>playerGuessed(e)}>{subsRND[0]}</button>
+          <button onClick={(e)=>playerGuessed(e)}>{subChose}</button>
+          <button onClick={(e)=>playerGuessed(e)}>{subsRND[2]}</button>
+          </div>:<div>
+    
+          <button onClick={(e)=>playerGuessed(e)}>{subsRND[0]}</button>
+          <button onClick={(e)=>playerGuessed(e)}>{subsRND[1]}</button>
+          <button onClick={(e)=>playerGuessed(e)}>{subsRND[2]}</button>
+          <button onClick={(e)=>playerGuessed(e)}>{subChose}</button>
+          </div>        
+        }</div>:!score.waiting?<h2 onClick={pullReddit}>Click Here Or random for proceed</h2>:<span>scrambling options<br/><img  style={{"width":"50px"}} src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"></img></span>}
     </div>
   )
 }
