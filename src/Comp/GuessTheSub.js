@@ -15,6 +15,8 @@ export default function GuessTheSub() {
       const currentScore = score.score
       if(e.target.innerHTML === subChose)
         setScore({correct:true,score:currentScore+1,waiting:false})
+      else
+        setScore({correct:false,score:currentScore,waiting:false})
 
     }
     const pullReddit =async ()=>{
@@ -59,7 +61,7 @@ export default function GuessTheSub() {
 
 
     <div style={{"display":"flex" , "flexDirection":"column","justifyContent":"center","width": "100%"}}>
-        {!score.waiting&&score.correct?<h1>WOW! +1 for you man!</h1>:!score.waiting?<h1>Wrong! You need to know more reddit</h1>:""}
+        {!score.waiting&&score.correct?<h1 style={{"color":"green"}}>WOW! +1 for you dude!</h1>:!score.waiting?<h1 style={{"color":"red"}}>Wrong! You need to know more reddit</h1>:""}
         <h2>Score : {score.score}</h2>
         <button onClick={pullReddit} style={{"width":"60%","alignSelf":"center"}}>Random</button>
         <br/>
