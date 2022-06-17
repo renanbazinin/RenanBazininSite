@@ -13,6 +13,7 @@ export default function GuessTheSub() {
     const [subsRND,setSubsRND] = useState([])
     const [score,setScore] = useState({correct:false,score:0,waiting:true})
     const playerGuessed = (e)=>{
+      window.scrollTo(0, 0)
       const currentScore = score.score
       if(e.target.innerHTML === subChose)
         setScore({correct:true,score:currentScore+1,waiting:false})
@@ -43,10 +44,12 @@ export default function GuessTheSub() {
           console.log(((rawFromSub.data.data.children[indexRnd].data.media.hls_url)))
         ////RANDOM SUB FUN
         const arrayOfRndSub =[]
+        
+        let popPost = await axios.get(`https://www.reddit.com/subreddits/popular.json?limit=5000`)
         while(arrayOfRndSub.length <3 ){
 
-          let popPost = await axios.get(`https://www.reddit.com/subreddits/popular.json`)
-          let findSub = (popPost.data.data.children[Math.floor(Math.random() * 25)].data.display_name_prefixed)
+         
+          let findSub = (popPost.data.data.children[Math.floor(Math.random() * length)].data.display_name_prefixed)
           if(findSub != subChose)
             arrayOfRndSub.push(findSub)
 
@@ -89,8 +92,8 @@ export default function GuessTheSub() {
                     </video>:data.data.url_overridden_by_dest!=null?
                  
                     <a href={data.data.url_overridden_by_dest}  target="_blank" rel="noopener noreferrer">Link!</a>
-                    :data.data.selftext.length>1?<div>{data.data.selftext}</div>:
-                    "He didn't write in body. Only title "
+                    :data.data.selftext.length>1?<div>{data.data.selftext}</div>:<span style={{"fontSize":"oblique"}}>
+                    "He didn't write in body. Only title "</span>
                     
                     }
 
