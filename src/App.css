@@ -119,3 +119,8 @@ a:visited {
   font-size: xx-large;
   background-color: rgb(255, 255, 255);
 }
+.reddit-box{
+  margin: 10%;
+  border-style: solid;
+
+}

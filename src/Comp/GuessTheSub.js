@@ -28,6 +28,7 @@ export default function GuessTheSub() {
 
         const raw = await axios.get(`https://www.reddit.com/subreddits/popular.json?limit=5000`)
         const length =raw.data.data.children.length
+  
         const subRan = (raw.data.data.children[Math.floor(Math.random() * length)].data.display_name_prefixed)
         await setSubChose(subRan)
 

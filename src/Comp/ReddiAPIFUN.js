@@ -60,7 +60,7 @@ export default function ReddiAPIFUN() {
         {data!=null?
             
            data.map((kid,i) => {
-                return <div key={i}>
+                return <div key={i} className='reddit-box'>
                     <br/>
                     <h4>Place {i+1}: {kid.data.title}</h4>
                     <br/>
