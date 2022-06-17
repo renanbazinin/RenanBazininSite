@@ -39,7 +39,7 @@ export default function Projects() {
             guess user:<br/>
             username:guess<br/>
             password:123<br/>
-            This user only can view and movies that subscribers watched. If some want to play as admin or more privilege user, email me
+            This user only can view and add movies that subscribers watched. If some want to play as admin or more privilege user, email me
         </div>
         <button onClick={()=>{window.location.href = 'https://github.com/renanbazinin/FinalFullStack-Movies-managage/';}}>Go To GitHub</button>
 
