@@ -25,8 +25,10 @@ export default function GuessTheSub() {
       await setRandOrder(Math.floor(Math.random() * 3))
       await setSubsRND(null)
       await setScore({...score,waiting:true})
-        const raw = await axios.get(`https://www.reddit.com/subreddits/popular.json`)
-        const subRan = (raw.data.data.children[Math.floor(Math.random() * 25)].data.display_name_prefixed)
+
+        const raw = await axios.get(`https://www.reddit.com/subreddits/popular.json?limit=5000`)
+        const length =raw.data.data.children.length
+        const subRan = (raw.data.data.children[Math.floor(Math.random() * length)].data.display_name_prefixed)
         await setSubChose(subRan)
 
         

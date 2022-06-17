@@ -16,7 +16,7 @@ function reducer(state = initialUserState, action) {
    
         }
             //return { ...state, allUsers:[...action.payload]};
-        case "HEBRAW":
+        case "עברית":
             return { ...state, lang:"he"};
 
         default:
