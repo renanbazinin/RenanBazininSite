@@ -39,7 +39,7 @@ export default function Projects() {
             guess user:<br/>
             username:renan<br/>
             password:123<br/>
-            Because in heroku the _id is changing I temporarily gave all other user that will create all premissions.  So don't create new users. Only create members (subscribers) 
+            Because in heroku the _id is changing I temporarily gave all other user that will create all premissions.  So don't create new users. Only create/edit members (subscribers) . Also you can edit/add movies.
         </div>
         <button onClick={()=>{window.location.href = 'https://github.com/renanbazinin/FinalFullStack-Movies-managage/';}}>Go To GitHub</button>
 
