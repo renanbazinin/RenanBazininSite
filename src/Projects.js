@@ -37,9 +37,9 @@ export default function Projects() {
           After I discharged from the army I got free course in fullstack. I learn advance JavaScript , React and NoSQL (using mongo).
           <br/>
             guess user:<br/>
-            username:guess<br/>
+            username:renan<br/>
             password:123<br/>
-            This user only can view and add movies that subscribers watched. If some want to play as admin or more privilege user, email me
+            Because in heroku the _id is changing I temporarily gave all other user that will create all premissions.  So don't create new users. Only create members (subscribers) 
         </div>
         <button onClick={()=>{window.location.href = 'https://github.com/renanbazinin/FinalFullStack-Movies-managage/';}}>Go To GitHub</button>
 
