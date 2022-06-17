@@ -96,7 +96,7 @@ function App() {
         
         <select onChange={(e)=>{toggleLang(e)}}>
           <option defaultValue >English</option>
-          <option>Hebraw</option>
+          <option>עברית</option>
           </select>
         </div>
      

@@ -85,7 +85,7 @@ export default function GuessTheSub() {
                       <source src={data.data.media.reddit_video.fallback_url}  type="video/mp4" height="100px"/>
                     </video>:data.data.url_overridden_by_dest!=null?
                  
-                    <a href={data.data.url_overridden_by_dest}>Link!</a>
+                    <a href={data.data.url_overridden_by_dest}  target="_blank" rel="noopener noreferrer">Link!</a>
                     :data.data.selftext.length>1?<div>{data.data.selftext}</div>:
                     "He didn't write in body. Only title "
                     

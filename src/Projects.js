@@ -35,10 +35,15 @@ export default function Projects() {
         <br/>
         <strong>Story: </strong>
           After I discharged from the army I got free course in fullstack. I learn advance JavaScript , React and NoSQL (using mongo).
-        Meanwhile, I didn't upload all the server-side to heroku. So you can watch my code in GitHub.
+          <br/>
+            guess user:<br/>
+            username:guess<br/>
+            password:123<br/>
+            This user only can view. if some want to play with admin or more privilege user email me
         </div>
         <button onClick={()=>{window.location.href = 'https://github.com/renanbazinin/FinalFullStack-Movies-managage/';}}>Go To GitHub</button>
-    
+
+        <button onClick={()=>{window.location.href = 'https://renanbazinin.github.io/Cinema-management/';}}>Go To Stie</button>
     </div>
     
   )
