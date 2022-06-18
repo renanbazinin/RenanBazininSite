@@ -10,7 +10,7 @@ export default function Projects() {
     const navigate = useNavigate()
   return (
       
-    <div>
+    <div  style={{"backgroundColor":"#1A1A1B","marginLeft":"20%","marginRight":"20%"}}>
         {storeData.lang==="en"?"":"עוד לא כתבתי בעברית"}
         <h1>Projects</h1>
     <br/>

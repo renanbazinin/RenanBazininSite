@@ -8,6 +8,7 @@ import HeapExam from './Comp/HeapExam'
 import Algorithms from './Comp/Algorithms';
 import ReddiAPIFUN from './Comp/ReddiAPIFUN'
 import GuessTheSub from './Comp/GuessTheSub'
+import Guess from './Comp/Guess'
 
 import {Nav , Navbar, NavLink,Container,NavDropdown}from 'react-bootstrap';
 
@@ -40,7 +41,25 @@ function App() {
         dispatch({type:langForRedux})
   }
 
+  const handleNav = (e)=>{
+   
 
+      const element = e.target
+      let c = element.closest("div");
+     const arrayOfA = c.getElementsByTagName('a')
+
+
+
+
+    for (let btc of arrayOfA) {
+      btc.className='';
+      console.log(btc)
+      if(btc.innerHTML===e.target.innerHTML)
+       btc.className='a-pressed';
+      
+    } 
+   
+  }
   return (
     <div className="App" >
     
@@ -51,56 +70,27 @@ function App() {
         crossOrigin="anonymous"
       />
       <h1>Renan The Student</h1>
-      <Navbar bg="light" expand="lg" >
-      <Container >
-        <Navbar.Brand href="#/RenanBazinin"><img src='https://i.imgur.com/Eb5gEmq.png' style={{width:"55px"}}/></Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-       
-    
-         
-            
-            <NavDropdown title="About Me" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#/RenanBazinin">Renan Bazinin</NavDropdown.Item>
-              <NavDropdown.Item href="#/TimeLine">Time Line</NavDropdown.Item>
-              {/*
-              <NavDropdown.Item href="#"></NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#"> </NavDropdown.Item>
-              */}
-            </NavDropdown>
-            <Nav.Link href="#/Projects">Projects</Nav.Link>
-         
-
-            {///Random stuff
-            }
-              <NavDropdown  title="Random For Practice Stuff" id="basic-nav-dropdown">
-              
-              <NavDropdown.Item href="#/GuessTheSub">Guess The Subreddit</NavDropdown.Item>
-              <NavDropdown.Item href="#/ReddiAPIFUN">Reddit API - Top 10 posts</NavDropdown.Item>
-            </NavDropdown>
-
-            
-           <Nav.Link href="#/Algorithms">אלגוריתמים</Nav.Link>
-
-
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-
-   
-
-    <div className='About'>
+      <div className='About'>
         
         <select onChange={(e)=>{toggleLang(e)}}>
           <option defaultValue >English</option>
           <option>עברית</option>
           </select>
         </div>
+      <div class="topnav">
+        <a href="#/RenanBazinin" onClick={handleNav}> About Me</a>
+        <a href="#/Projects"  onClick={handleNav}>Projects</a>
+        <a href="#/Guess"  onClick={handleNav}>Fun And Random For Practice</a>
+        
+        <a href="#/Algorithms" onClick={handleNav}>אלגוריתמים</a>
+      </div>
+      
+
+   
+
+
      
-        <br/>
+    
       <Routes >
         <Route path='/' element={<RenanBazinn  />}/>
         <Route path='/RenanBazinin/' element={<RenanBazinn/>}/>
@@ -114,7 +104,7 @@ function App() {
         </Route>
         <Route path='/ReddiAPIFUN' element={<ReddiAPIFUN/>}/>
         <Route path='/GuessTheSub' element={<GuessTheSub/>}/>
-
+        <Route path='/Guess' element={<Guess/>}/>
     
       </Routes>
 

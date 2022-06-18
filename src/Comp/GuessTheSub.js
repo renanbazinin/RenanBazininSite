@@ -74,8 +74,7 @@ export default function GuessTheSub() {
         {!score.waiting?<span>The correct ans is {subChose} <br/> <a href={`https://reddit.com${lastPostLink}`}  target="_blank" rel="noopener noreferrer" >Here is the link to the post</a></span>:""}
         <h2>Score : {score.score}</h2>
         <button onClick={pullReddit} style={{"width":"60%","alignSelf":"center"}}>Random</button>
-        <br/>
-        GuessTheSub<br/>
+
         {!score.waiting?subChose:""}
         <br/><br/><br/>
         {data!==null?
