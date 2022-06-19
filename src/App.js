@@ -80,8 +80,8 @@ function App() {
       <div class="topnav">
         <a href="#/RenanBazinin" onClick={handleNav}> About Me</a>
         <a href="#/Projects"  onClick={handleNav}>Projects</a>
-        <a href="#/Guess"  onClick={handleNav}>Fun And Random For Practice</a>
-        
+        <a href="#/Guess"  onClick={handleNav}>Guess The Sub (Reddit)</a>
+        <a href="#/ReddiAPIFUN"  onClick={handleNav}>Top 10 (Reddit)</a>
         <a href="#/Algorithms" onClick={handleNav}>אלגוריתמים</a>
       </div>
       
