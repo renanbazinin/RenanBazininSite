@@ -26,7 +26,9 @@ export default function Projects() {
         But the problem with the army is that you can't import web environment without hell. And I was only medic. So I did it with pure vanilla JavaScript. Wrote in notepad++.
          
         </div>
-        <button onClick={()=>{window.location.href = 'https://renanbazinin.github.io/Anamnezatron1/';}}>Go To Site</button>
+        <button onClick={()=>{window.open(
+          'https://renanbazinin.github.io/Anamnezatron1/',
+          '_blank' );}}>Go To Site</button>
         <br/>  <br/>
         <h5>FullStack Course , From KERNELiOS </h5>
         <div  className='About' >
@@ -41,9 +43,9 @@ export default function Projects() {
             password:123<br/>
             Because in heroku the _id is changing I temporarily gave all other user that will create all premissions.  So don't create new users. Only create/edit members (subscribers) . Also you can edit/add movies.
         </div>
-        <button onClick={()=>{window.location.href = 'https://github.com/renanbazinin/FinalFullStack-Movies-managage/';}}>Go To GitHub</button>
+        <button onClick={()=>{window.open('https://github.com/renanbazinin/FinalFullStack-Movies-managage/','_blank');}}>Go To GitHub</button>
 
-        <button onClick={()=>{window.location.href = 'https://renanbazinin.github.io/Cinema-management/';}}>Go To Stie</button>
+        <button onClick={()=>{window.open('https://renanbazinin.github.io/Cinema-management/','_blank');}}>Go To Stie</button>
     </div>
     
   )
