@@ -47,7 +47,7 @@ export default function RenanBazinn() {
                 <ul>
       
                   <li>C# from high school (97 score in computer science)</li>
-                  <li>JAVA from Open University (82 score)</li>
+                 
                   <ul><li>OOP, recursion and how to calculate time complexity </li></ul>
                   <li>Python from project in 5 Point the software engineering (100 score)</li>
                   </ul>
