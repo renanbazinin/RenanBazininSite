@@ -84,6 +84,7 @@ function App() {
         <a href="#/Guess"  onClick={handleNav}>Guess The Sub (Reddit)</a>
         <a href="#/ReddiAPIFUN"  onClick={handleNav}>Top 10 (Reddit)</a>
         <a href="#/Algorithms" onClick={handleNav}>אלגוריתמים</a>
+        
       </div>
       
 
