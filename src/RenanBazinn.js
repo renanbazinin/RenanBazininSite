@@ -1,9 +1,33 @@
 import React from 'react'
 import { useSelector } from "react-redux"
+import TimeLine from './TimeLine'
 export default function RenanBazinn() {
   const storeData = useSelector(store => { return store })
+  const handleNav = (e)=>{
+   
+
+        const element = e.target
+        let c = element.closest("div");
+      const arrayOfA = c.getElementsByTagName('a')
+
+
+
+
+      for (let btc of arrayOfA) {
+        btc.className='';
+        console.log(btc)
+        if(btc.innerHTML===e.target.innerHTML)
+        btc.className='a-pressed';
+        
+      } 
+    
+    }
   return (
     <div className="About" >
+        <div class="topnav" style={{"margin":0}}>
+        <a href="#/RenanBazinin" className='a-pressed' >RenanBazinin</a>
+        <a href="#/TimeLine" >TimeLine</a>
+        </div>
       {storeData.lang==="en"?"":"עוד לא כתבתי בעברית"}
         <h2 style={{"textAlign":"center"}}>Renan Bazinin</h2><br/>
         I'm a new student to computer science.  I have always had a passion for computers

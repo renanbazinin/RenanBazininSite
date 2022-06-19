@@ -119,8 +119,13 @@ export default function TimeLine() {
 
     const  lang  = "en";
   return (
-    <div style={{ cursor: cursor }}>
- 
+
+
+<div className="About" >
+        <div class="topnav" style={{"margin":0}}>
+        <a href="#/RenanBazinin"  >RenanBazinin</a>
+        <a href="#/TimeLine" className='a-pressed'>TimeLine</a>
+        </div>
         {storeData.lang==="en"?dataEnglish:dataHebraw}
 
 
