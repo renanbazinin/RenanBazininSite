@@ -22,8 +22,8 @@ html{
   background-color:#1A1A1B;
   text-align: left;
   padding-bottom: 5px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
 
   direction: ltr;
   font-size: large;
@@ -32,16 +32,16 @@ html{
 .AboutHebraw{
   text-align: start;
   
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
   background-color: #1A1A1B;
   direction: rtl;
   font-size: large;
 }
 .Projects{
 
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
   background-color: white;
   direction: ltr;
   font-size: large;
@@ -104,8 +104,8 @@ a:visited {
 }
 
 .topnav {
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
   background-color: #333;
   overflow: hidden;
 }
