@@ -31,7 +31,9 @@ export default function Algorithms() {
         <div >
 
     <button  onClick={(e)=>{handleNav(e); navigate("HeapExam") }} className='button-space'>Heap</button>
-    <button  onClick={(e)=>{handleNav(e);navigate("")}} className='button-space'>Fake1</button>
+    <button  onClick={(e)=>{handleNav(e);navigate("")}} className='button-space'>Fake Button For Exit</button>
+  {/*
+  
     <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake2</button>
     <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake3</button>
     <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake4</button>
@@ -39,7 +41,9 @@ export default function Algorithms() {
     <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake6</button>
     <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake7</button>
     <button  onClick={(e)=>{handleNav(e)}}  className='button-space'>Fake8</button>
-      </div>
+      
+    */}
+    </div>
         <div className='algo-some '>
 
         <Outlet/>
