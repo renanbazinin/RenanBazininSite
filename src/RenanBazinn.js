@@ -54,8 +54,8 @@ export default function RenanBazinn() {
                   Web-Development:
                   <ul>
                    <li>Advanced JavaScript (Async programming and call-back functions)</li>
-                    <li>Node.js , React , mongoDB and express</li>
-                    <li>React and advanced JavaScript from kernelios (inculding Async programming and Callback function)</li>
+                    <li>Node.js , React , MongoDB and Express</li>
+               
                     </ul>
                     General
                     <ul>
