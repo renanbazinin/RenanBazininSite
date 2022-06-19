@@ -1,6 +1,6 @@
 .App {
   color: white;
-  background-color:#000000;
+  background-color:#131010;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@
 
 
 html{
-  background-color:#000000;
+  background-color:#131010;
   color: white;
   --bs-bg-opacity: 1;
 
