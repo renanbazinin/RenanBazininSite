@@ -85,7 +85,7 @@ export default function Guess() {
       }, []);
 const shereURL =async ()=>{
 
-  navigator.clipboard.writeText("https://renanbazinin.github.io/RenanBazininSite/Guess/")
+  navigator.clipboard.writeText("https://renanbazinin.github.io/RenanBazininSite/#/Guess/")
   await setCopyToc(true)
 
 
