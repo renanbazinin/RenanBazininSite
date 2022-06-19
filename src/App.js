@@ -69,7 +69,8 @@ function App() {
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
         crossOrigin="anonymous"
       />
-      <h1>Renan The Student</h1>
+      <h1>Renan The Student <a href="#/RenanBazinin" > <img src='https://i.imgur.com/Eb5gEmq.png' style={{width:"30px"}}/></a></h1>
+     
       <div className='About'>
         
         <select onChange={(e)=>{toggleLang(e)}}>
