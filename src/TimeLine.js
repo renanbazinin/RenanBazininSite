@@ -123,7 +123,7 @@ export default function TimeLine() {
 
 <div className="About" >
         About Me:
-        <div class="topnav"  style={{"margin":0,"border":"1px solid grey"}} >
+        <div class="topnav"  style={{"margin":0}} >
         <a href="#/RenanBazinin"  >RenanBazinin</a>
         <a href="#/TimeLine" className='a-pressed'>TimeLine</a>
         </div>
