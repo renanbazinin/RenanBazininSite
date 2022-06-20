@@ -138,7 +138,7 @@ a:visited {
 }
 
 .a-pressed{
-  background-color:#1A1A1B; 
+  background-color:rgb(26, 26, 27); 
+  border-color:rgb(26, 26, 27) !important;
 
-  border-width: 0px;
 }
