@@ -6,11 +6,11 @@ export default function Notebook() {
 
 
     useEffect(()=>{
-        alert("first")
-        if(sessionStorage.getItem('enter_id')===process.env.REACT_APP_LOG_PASS)
+
+        if( localStorage.getItem('enter_id') ===process.env.REACT_APP_LOG_PASS || sessionStorage.getItem('enter_id')===process.env.REACT_APP_LOG_PASS)
         {
             console.log("good")
-            setPassword(sessionStorage.getItem('enter_id'))
+            setPassword(localStorage.getItem('enter_id'))
         }
     }, [password])
 
