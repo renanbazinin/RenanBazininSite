@@ -6,6 +6,7 @@ export default function Notebook() {
 
 
     useEffect(()=>{
+        alert("first")
         if(sessionStorage.getItem('enter_id')===process.env.REACT_APP_LOG_PASS)
         {
             console.log("good")
@@ -16,6 +17,7 @@ export default function Notebook() {
     const handlPass = (e)=>{
 
         sessionStorage.setItem('enter_id', e.target.value);
+        localStorage.setItem('enter_id', e.target.value);
         setPassword(e.target.value)
     }
 
