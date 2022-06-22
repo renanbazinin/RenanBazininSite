@@ -9,6 +9,7 @@ import Algorithms from './Comp/Algorithms';
 import ReddiAPIFUN from './Comp/ReddiAPIFUN'
 import GuessTheSub from './Comp/GuessTheSub'
 import Guess from './Comp/Guess'
+import Notebook from './Comp/Notebook';
 
 import {Nav , Navbar, NavLink,Container,NavDropdown}from 'react-bootstrap';
 
@@ -83,7 +84,7 @@ function App() {
         <a href="#/Projects"  onClick={handleNav}>Projects</a>
         <a href="#/Guess"  onClick={handleNav}>Guess The Sub (Reddit)</a>
         <a href="#/ReddiAPIFUN"  onClick={handleNav}>Top 10 (Reddit)</a>
-        <a href="#/Algorithms" onClick={handleNav}>אלגוריתמים</a>
+        <a href="#/Notebook" onClick={handleNav}>המחברת של רנן</a>
         
       </div>
       
@@ -106,7 +107,10 @@ function App() {
         </Route>
         <Route path='/ReddiAPIFUN' element={<ReddiAPIFUN/>}/>
         <Route path='/GuessTheSub' element={<GuessTheSub/>}/>
+
         <Route path='/Guess' element={<Guess/>}/>
+        <Route path='/Notebook' element={<Notebook/>}/>
+        
     
       </Routes>
 
