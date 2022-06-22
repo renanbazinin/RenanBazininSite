@@ -24,7 +24,7 @@ export default function RenanBazinn() {
     }
   return (
     <div className="About" >
-      About Me:
+      About Me: {process.env.REACT_APP_LOG_PASS}
         <div class="topnav" style={{"margin":0}} >
         <a href="#/RenanBazinin" className='a-pressed' >RenanBazinin</a>
         <a href="#/TimeLine" >TimeLine</a>
