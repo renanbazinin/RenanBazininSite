@@ -24,6 +24,7 @@ export default function Notebook() {
     const logOut = ()=>{
 
         sessionStorage.setItem('enter_id', "");
+        localStorage.setItem('enter_id', "");
         setPassword()
     }
   return (
