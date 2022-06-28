@@ -35,11 +35,12 @@ export default function Notebook() {
         <div>Welcome
             <button onClick={logOut}>Log Out</button>
 
-                 <div className="About" >
-
-                  Subjects
+                 <div  >
+                 Subjects    <br/>
+                 אינדוקציה 
+                
                   <br/>
-                  אינדוקציה 
+         
                   <iframe
                     frameborder="0"
                     scrolling="no"
