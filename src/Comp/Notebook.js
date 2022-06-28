@@ -44,8 +44,7 @@ export default function Notebook() {
                   <iframe
                     frameborder="0"
                     scrolling="no"
-                    width="80%"
-                    height="480"
+
                     src="https://drive.google.com/file/d/1wFtn6GNttAmDESIB0TGUJD_G5sxjg2Jn/preview"
               
                     >

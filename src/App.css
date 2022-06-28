@@ -142,3 +142,19 @@ a:visited {
   border-color:rgb(26, 26, 27) !important;
 
 }
+
+iframe{
+
+
+  width:640px;
+  height:480px;
+}
+
+@media screen and (max-width: 999px) {
+  iframe{
+
+    max-width: 640;
+    width:80%;
+    height:480;
+  }
+}
