@@ -88,7 +88,7 @@ export default function GuessTheSub() {
                 <img src={data.data.url} width={"300px"}/>:
                   data.data.is_video?
                     <video controls width="250" autoPlay>
-                      <source src={data.data.media.reddit_video.fallback_url}  type="video/mp4" height="100px"/>
+                      <source src="data.data.media.reddit_video.fallback_url"  type="video/mp4" height="100px"/>
                     </video>:data.data.url_overridden_by_dest!=null?
                  
                     <a href={data.data.url_overridden_by_dest}  target="_blank" rel="noopener noreferrer">Link!</a>
