@@ -146,14 +146,14 @@ a:visited {
 iframe{
 
 
-  width:640px;
-  height:480px;
+  width:840px;
+  height:680px;
 }
 
 @media screen and (max-width: 999px) {
   iframe{
 
-    max-width: 640;
+
     width:80%;
     height:480;
   }

@@ -38,20 +38,22 @@ export default function Notebook() {
                  <div  >
                  Subjects    <br/>
                  אינדוקציה 
-                
+                 <br/>  <br/>  <br/>
+                 <video controls width="800" autoPlay>
+                      <source src=" https://185-229-191-160.servers.tips:9092/vod2/POMfTxSzQNr3E0pgYyQuUw/188178/1656463021/1eceecbae267683548c950279f0475ea.mp4"  type="video/mp4" height="100px"/>
+                    </video>
                   <br/>
-         
+                  <br/>  <br/>
                   <iframe
                     frameborder="0"
                     scrolling="no"
 
-                    src="https://drive.google.com/file/d/1wFtn6GNttAmDESIB0TGUJD_G5sxjg2Jn/preview"
-              
+                    src="https://drive.google.com/file/d/1-kk7vGWF6sNMawKnhDGZCxyKjmJFO6eq/preview"
+                   
                     >
                     </iframe>
 
-
-
+         
                   </div>
         </div>:<div>
         Enter your password for enter
