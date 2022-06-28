@@ -34,6 +34,25 @@ export default function Notebook() {
         password===process.env.REACT_APP_LOG_PASS?
         <div>Welcome
             <button onClick={logOut}>Log Out</button>
+
+                 <div className="About" >
+
+                  Subjects
+                  <br/>
+                  אינדוקציה 
+                  <iframe
+                    frameborder="0"
+                    scrolling="no"
+                    width="640"
+                    height="480"
+                    src="https://drive.google.com/file/d/1wFtn6GNttAmDESIB0TGUJD_G5sxjg2Jn/preview"
+              
+                    >
+                    </iframe>
+
+
+
+                  </div>
         </div>:<div>
         Enter your password for enter
             <input type="text" onChange={(e)=>handlPass(e)} />
