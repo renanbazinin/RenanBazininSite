@@ -40,7 +40,7 @@ export default function Notebook() {
                  אינדוקציה 
                  <br/>  <br/>  <br/>
                  <video controls width="800" autoPlay>
-                      <source src={REACT_APP_VID_SEC}  type="video/mp4" height="100px"/>
+                      <source src="https://185-229-191-160.servers.tips:9092/vod2/POMfTxSzQNr3E0pgYyQuUw/188178/1656463021/1eceecbae267683548c950279f0475ea.mp4"  type="video/mp4" height="100px"/>
                     </video>
                   <br/>
                   <br/>  <br/>
