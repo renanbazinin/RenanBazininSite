@@ -60,9 +60,9 @@ export default function Notebook() {
 
                  <div  className='StudyHebraw'>
                  <br/>
-               <div class="topnav" style={{"margin":"0"}} >
+               <div class="topnav-heb" style={{"margin":"0"}} >
                   
-            <a href="#/Notebook/Calculus" className='a-pressed' onClick={handleNav}>חדו"א</a>
+            <a href="#/Notebook/Calculus" onClick={handleNav}>חדו"א</a>
             <a href="#/Notebook"  onClick={handleNav}>לוגיקה ותורת הקבוצות</a>
             
             </div>

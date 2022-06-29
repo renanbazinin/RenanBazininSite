@@ -29,6 +29,7 @@ export default function () {
                   <a href="#/Notebook/Calculus/Induction" onClick={handleNav}>אינדוקציה</a>
                  
                   </div>
+                
                   <Outlet/>
     </div>
   )

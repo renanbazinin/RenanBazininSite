@@ -199,3 +199,13 @@ iframe{
     height:480;
   }
 }
+
+.comments{
+  background-color: #ddd;
+  margin: auto;
+  width: 40%;
+  color: #131010;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
+}
