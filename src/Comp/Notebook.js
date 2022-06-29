@@ -8,7 +8,26 @@ export default function Notebook() {
 
     const [mov,setMov] = useState('');
 
+    const checkWhatToPress = ()=>{
+      const urlChack = document.URL.split('RenanBazininSite');
+      const urlChackWithSlash = urlChack[1].split("/")
+      console.log( document.querySelectorAll("a[href='#/Notebook']"))
+      console.log(urlChack)
+      let AddUrl="#/" 
+      for(let i=1;i<urlChackWithSlash.length;i++){
+          AddUrl+=urlChackWithSlash[i];
+          console.log(document.querySelectorAll(`a[href='${AddUrl}']`))
+          let theAclassChange = document.querySelectorAll(`a[href='${AddUrl}']`);
+          if(theAclassChange[0]!=undefined)
+          theAclassChange[0].className='a-pressed';
+          AddUrl+="/"
+      }
+    }
+
     useEffect(()=>{
+
+
+      checkWhatToPress()
 
         if( localStorage.getItem('enter_id') ===process.env.REACT_APP_LOG_PASS || sessionStorage.getItem('enter_id')===process.env.REACT_APP_LOG_PASS)
         {
@@ -43,7 +62,7 @@ export default function Notebook() {
 
     for (let btc of arrayOfA) {
       btc.className='';
-      console.log(btc)
+     
       if(btc.innerHTML===e.target.innerHTML)
        btc.className='a-pressed';
       

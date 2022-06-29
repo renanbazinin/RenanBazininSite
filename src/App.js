@@ -27,12 +27,28 @@ import { useDispatch } from 'react-redux';
 
 function App() {
 
-
-
-
   const dispatch = useDispatch();
   const [lang,setLang] = useState('he');
+  const checkWhatToPress = ()=>{
+    const urlChack = document.URL.split('RenanBazininSite');
+    const urlChackWithSlash = urlChack[1].split("/")
+    console.log( document.querySelectorAll("a[href='#/Notebook']"))
+    console.log(urlChack)
+    let AddUrl="#/" 
+    for(let i=1;i<urlChackWithSlash.length;i++){
+        AddUrl+=urlChackWithSlash[i];
+        console.log(document.querySelectorAll(`a[href='${AddUrl}']`))
+        let theAclassChange = document.querySelectorAll(`a[href='${AddUrl}']`);
+        if(theAclassChange[0]!=undefined)
+        theAclassChange[0].className='a-pressed';
+        AddUrl+="/"
+    }
+  }
 
+  
+  useEffect(()=>{
+    checkWhatToPress()
+  }, [])
 
   const toggleLang = (e)=>{
 
