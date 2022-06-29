@@ -15,7 +15,7 @@ export default function Notebook() {
       console.log(urlChack)
       let AddUrl="#/" 
       if(urlChackWithSlash[0]==='')
-        AddUrl="/#/" 
+        AddUrl="" 
       for(let i=1;i<urlChackWithSlash.length;i++){
           AddUrl+=urlChackWithSlash[i];
           console.log(document.querySelectorAll(`a[href='${AddUrl}']`))
