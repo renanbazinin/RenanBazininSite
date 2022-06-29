@@ -11,12 +11,13 @@ export default function Notebook() {
     const checkWhatToPress = ()=>{
       const urlChack = document.URL.split('RenanBazininSite');
       const urlChackWithSlash = urlChack[1].split("/")
-      console.log( document.querySelectorAll("a[href='#/Notebook']"))
+      //console.log( document.querySelectorAll("a[href='#/Notebook']"))
       console.log(urlChack)
-      let AddUrl="#/" 
+      let AddUrl=urlChackWithSlash[0] +"/"
+      //console.log("urlChackWithSlash[0] = " +urlChackWithSlash[0])
       for(let i=1;i<urlChackWithSlash.length;i++){
           AddUrl+=urlChackWithSlash[i];
-          console.log(document.querySelectorAll(`a[href='${AddUrl}']`))
+          //console.log(document.querySelectorAll(`a[href='${AddUrl}']`))
           let theAclassChange = document.querySelectorAll(`a[href='${AddUrl}']`);
           if(theAclassChange[0]!=undefined)
           theAclassChange[0].className='a-pressed';
