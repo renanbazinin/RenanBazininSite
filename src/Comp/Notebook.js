@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Induction from './Math/Calculus/Induction';
 
-
+import { Routes, Route, Link ,useNavigate, Outlet,useParams } from "react-router-dom"
 export default function Notebook() {
 
     const [password,setPassword] = useState('');
@@ -30,6 +31,25 @@ export default function Notebook() {
         localStorage.setItem('enter_id', "");
         setPassword()
     }
+    const handleNav = (e)=>{
+   
+
+      const element = e.target
+      let c = element.closest("div");
+     const arrayOfA = c.getElementsByTagName('a')
+
+
+
+
+    for (let btc of arrayOfA) {
+      btc.className='';
+      console.log(btc)
+      if(btc.innerHTML===e.target.innerHTML)
+       btc.className='a-pressed';
+      
+    } 
+   
+  }
   return (
     <div>
         
@@ -38,23 +58,18 @@ export default function Notebook() {
         <div>Welcome
             <button onClick={logOut}>Log Out</button>
 
-                 <div  >
-                 Subjects    <br/>
-                 אינדוקציה 
-                 <br/>  <br/>  <br/>
-                 <video controls width="800" autoPlay>
-                      <source src={process.env.REACT_APP_VID_SEC}  type="video/mp4" height="100px"/>
-                    </video>
-                  <br/>
-                  <br/>  <br/>
-                  <iframe
-                    frameborder="0"
-                    scrolling="no"
+                 <div  className='StudyHebraw'>
+                 <br/>
+               <div class="topnav" style={{"margin":"0"}} >
+                  
+            <a href="#/Notebook/Calculus" className='a-pressed' onClick={handleNav}>חדו"א</a>
+            <a href="#/Notebook"  onClick={handleNav}>לוגיקה ותורת הקבוצות</a>
+            
+            </div>
 
-                    src="https://drive.google.com/file/d/1-kk7vGWF6sNMawKnhDGZCxyKjmJFO6eq/preview"
-                   
-                    >
-                    </iframe>
+            
+                
+                <Outlet/>
 
          
                   </div>

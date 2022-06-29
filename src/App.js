@@ -11,6 +11,9 @@ import GuessTheSub from './Comp/GuessTheSub'
 import Guess from './Comp/Guess'
 import Notebook from './Comp/Notebook';
 
+import Induction from './Comp/Math/Calculus/Induction';
+import Calculus from './Comp/Math/Calculus/Calculus'
+
 import {Nav , Navbar, NavLink,Container,NavDropdown}from 'react-bootstrap';
 
 import React, { useState, useEffect } from 'react';
@@ -109,8 +112,14 @@ function App() {
         <Route path='/GuessTheSub' element={<GuessTheSub/>}/>
 
         <Route path='/Guess' element={<Guess/>}/>
-        <Route path='/Notebook' element={<Notebook/>}/>
-        
+
+        <Route path='/Notebook' element={<Notebook/>}>
+          
+          <Route path="Calculus" element={<Calculus />} >
+             <Route path="Induction" element={<Induction />} />
+          </Route>
+
+        </Route>
     
       </Routes>
 
