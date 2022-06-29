@@ -73,7 +73,7 @@ export default function Induction() {
       </div>
       <div>
         {allcomment!=null?allcomment.map((comment,i)=>{
-          return <div key={i} className='comments'>שם:{comment.name===undefined?"אנונימי":comment.name} סוג:{comment.type}<br/><span style={{"fontSize":"x-large"}}>{comment.text}</span><br/></div>
+          return <span><div key={i} className='comments'>שם:{comment.name===undefined?"אנונימי":comment.name} סוג:{comment.type}<br/><span style={{"fontSize":"x-large"}}>{comment.text}</span><br/></div><br/></span>
         }):""}
       </div>
     </div>
