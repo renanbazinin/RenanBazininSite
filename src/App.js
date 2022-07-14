@@ -10,7 +10,7 @@ import ReddiAPIFUN from './Comp/ReddiAPIFUN'
 import GuessTheSub from './Comp/GuessTheSub'
 import Guess from './Comp/Guess'
 import Notebook from './Comp/Notebook';
-
+import axios from 'axios'
 import Induction from './Comp/Math/Calculus/Induction';
 import Calculus from './Comp/Math/Calculus/Calculus'
 
@@ -26,9 +26,49 @@ import { useDispatch } from 'react-redux';
 
 
 function App() {
-
+  const storeData = useSelector(store => { return store })
   const dispatch = useDispatch();
   const [lang,setLang] = useState('he');
+
+  const [humanChack,setHumanChack] = useState({});
+
+  const [comment,setComment] = useState({"type":"הערה","text":"","subject":"","name":"אנונימי"});
+
+  const [allcomment,setAllcomment] = useState();
+  const herokuURL = process.env.REACT_APP_HERO_API
+
+  useEffect(()=>{
+
+    pullComments();
+    checkWhatToPress()
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    const ans = num1+num2;
+    setHumanChack({num1:num1,num2:num2,ans:ans})
+
+
+  }, [])
+
+  
+    const handlVal = (e)=>{
+      setComment({...comment,type:e.target.value})
+    }
+
+    const handlValText = (e)=>{
+      setComment({...comment,text:e.target.value})
+    }
+
+    const pullComments = async()=>{
+       const raw = await axios.get(herokuURL)
+       console.log(raw.data)
+       setAllcomment(raw.data)
+
+    }
+    const handlValName = (e)=>{
+      setComment({...comment,name:e.target.value})
+
+    }
+
   const checkWhatToPress = ()=>{
     const urlChack = document.URL.split('RenanBazininSite');
     const urlChackWithSlash = urlChack[1].split("/")
@@ -45,10 +85,33 @@ function App() {
     }
   }
 
-  
-  useEffect(()=>{
-    checkWhatToPress()
-  }, [])
+
+
+
+
+  const sendComment = async()=>{
+
+
+    if(humanChack.ans===parseInt(humanChack.robotSaid)){
+      console.log(comment)
+      const respondDB = await axios.post(`${herokuURL}`,{...comment,subject:storeData.sec})
+      console.log(respondDB)
+      pullComments();
+
+
+
+    }else
+    alert("you are robot or can do math . hence you can't reply")
+
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    const ans = num1+num2;
+    setHumanChack({num1:num1,num2:num2,ans:ans})
+
+
+   }
+
+
 
   const toggleLang = (e)=>{
 
@@ -60,6 +123,10 @@ function App() {
 
         dispatch({type:langForRedux})
   }
+
+ const handlMath = (e)=>{
+    setHumanChack({...humanChack,robotSaid:e.target.value})
+ }
 
   const handleNav = (e)=>{
    
@@ -129,16 +196,48 @@ function App() {
 
         <Route path='/Guess' element={<Guess/>}/>
 
-        <Route path='/Notebook' element={<Notebook/>}>
+        <Route path='/Notebook' element={<Notebook c/>}>
           
-          <Route path="Calculus" element={<Calculus />} >
-             <Route path="Induction" element={<Induction />} />
+          <Route path="Calculus" element={<Calculus  />} >
+             <Route path="Induction" element={<Induction  />} />
           </Route>
 
         </Route>
     
       </Routes>
+    
 
+    <div className='comments-class' >
+                <div > 
+        
+                      <label>
+                        סוג תגובה
+                        <br/>
+
+                      <select onChange={(e)=>{handlVal(e)}}>
+                        <option>הערה</option>
+                        <option >תיקון</option>
+                        <option >שאלה</option>
+                      </select>
+                      </label><br/>
+                      <textarea dir='rtl' placeholder='כתוב כאן את תגובתך' onChange={(e)=>{handlValText(e)}} ></textarea>
+                      <br/><br/>
+                      <input type={"text"} placeholder='אנונימי' onChange={(e)=>{handlValName(e)}} />
+                      <br/><br/>
+                      Human verification : <strong> {humanChack.num1} + {humanChack.num2} </strong>= <input type={"text"} style={{"width":"5%"}} onChange={(e)=>{handlMath(e)}} />
+                      {humanChack.ans===parseInt(humanChack.robotSaid)?<img src='https://cdn.pixabay.com/photo/2016/08/21/18/48/emoticon-1610518_960_720.png' style={{"width":"35px"}} />:
+                      <img src='https://cdn.pixabay.com/photo/2019/06/22/14/42/robot-4291692_960_720.png' style={{"width":"30px"}} />}
+                      <br/>
+                      <button onClick={sendComment}>שלח</button>
+              </div>
+               {storeData.sec} - נושא התגובות 
+              <div >
+                      {allcomment!=null?allcomment.map((commentAPI,i)=>{
+                        if(commentAPI.subject===storeData.sec)
+                          return <span key={i+'span'}><div key={i} className='comments'>שם:{commentAPI.name===undefined?"אנונימי":commentAPI.name} סוג:{commentAPI.type}<br/><span style={{"fontSize":"x-large"}}>{commentAPI.text}</span><br/></div><br/></span>
+                      }):""}
+            </div>
+    </div>
       <footer>
       Email: <a href = "mailto: renanbazinin2@gmail.com">renanbazinin2@gmail.com</a>
 

@@ -1,11 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-
+import { useDispatch } from 'react-redux';
 import axios from 'axios'
 
 
 export default function Guess() {
-
+    const dispatch = useDispatch();
     const [NSFW,setNSFW] = useState(false)
     const [copyToc,setCopyToc] = useState(false)
     const [randOrder,setRandOrder] =useState(0)
@@ -79,7 +79,7 @@ export default function Guess() {
 
       useEffect(() => {
         sessionStorage.setItem("score",0);
-    
+        dispatch({type:"CHANGE-SEC",payload:"Guess"})
          pullReddit();
      
       }, []);

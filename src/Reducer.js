@@ -1,6 +1,7 @@
 
 
 const initialUserState = {
+    sec:"",
     lang:"en"
 }
 
@@ -18,6 +19,9 @@ function reducer(state = initialUserState, action) {
             //return { ...state, allUsers:[...action.payload]};
         case "עברית":
             return { ...state, lang:"he"};
+
+        case "CHANGE-SEC":
+            return {...state,sec:action.payload}
 
         default:
             return state

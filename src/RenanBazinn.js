@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { useSelector } from "react-redux"
+import { useDispatch } from 'react-redux';
 import TimeLine from './TimeLine'
 export default function RenanBazinn() {
   const storeData = useSelector(store => { return store })
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+
+    dispatch({type:"CHANGE-SEC",payload:"RenanBazinin"})
+  }, []);
   const handleNav = (e)=>{
    
 

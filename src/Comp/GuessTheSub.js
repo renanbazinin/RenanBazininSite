@@ -2,9 +2,13 @@
 import React, { useState, useEffect } from 'react';
 
 import axios from 'axios'
+import { useDispatch } from 'react-redux';
 
 
 export default function GuessTheSub() {
+
+
+   const dispatch = useDispatch();
 
     const [randOrder,setRandOrder] =useState(0)
     const [subChose, setSubChose] = useState(null);
@@ -62,7 +66,7 @@ export default function GuessTheSub() {
 
       useEffect(() => {
          pullReddit();
-     
+         dispatch({type:"CHANGE-SEC",payload:"GuessTheSub"})
       }, []);
 
 

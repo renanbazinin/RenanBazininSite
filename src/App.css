@@ -209,3 +209,12 @@ iframe{
   border-color: rgb(0, 0, 0);
   border-width: 1px;
 }
+
+.comments-class{
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #131010;
+    border-style: solid;
+    border-color: rgb(48, 44, 44);
+    border-width: 1px;
+  }

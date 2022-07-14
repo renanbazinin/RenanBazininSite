@@ -1,10 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-
+import { useDispatch } from 'react-redux';
 import axios from 'axios'
 
 
 export default function ReddiAPIFUN() {
+    const dispatch = useDispatch();
     const [data, setData] = useState(null);
     const [memes, setMemes] = useState(null);
     const pullReddit =async ()=>{
@@ -20,6 +21,7 @@ export default function ReddiAPIFUN() {
     }
 
       useEffect(() => {
+        dispatch({type:"CHANGE-SEC",payload:"ReddiAPIFUN"})
          pullReddit();
      
       }, []);

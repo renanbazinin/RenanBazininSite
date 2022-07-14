@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Induction from './Math/Calculus/Induction';
 
 import { Routes, Route, Link ,useNavigate, Outlet,useParams } from "react-router-dom"
+import { useDispatch } from 'react-redux';
 export default function Notebook() {
-
+    const dispatch = useDispatch();
     const [password,setPassword] = useState('');
 
     const [mov,setMov] = useState('');
@@ -15,7 +16,7 @@ export default function Notebook() {
       console.log(urlChack)
       let AddUrl="#/" 
       if(urlChackWithSlash[0]==='')
-        AddUrl="" 
+        AddUrl="/#/" 
       for(let i=1;i<urlChackWithSlash.length;i++){
           AddUrl+=urlChackWithSlash[i];
           console.log(document.querySelectorAll(`a[href='${AddUrl}']`))
@@ -28,7 +29,7 @@ export default function Notebook() {
 
     useEffect(()=>{
 
-
+      dispatch({type:"CHANGE-SEC",payload:""})
       checkWhatToPress()
 
         if( localStorage.getItem('enter_id') ===process.env.REACT_APP_LOG_PASS || sessionStorage.getItem('enter_id')===process.env.REACT_APP_LOG_PASS)
@@ -83,7 +84,7 @@ export default function Notebook() {
                  <br/>
                <div class="topnav-heb" style={{"margin":"0"}} >
                   
-            <a href="#/Notebook/Calculus" onClick={handleNav}>חדו"א</a>
+            <a href="#/Notebook/Calculus" onClick={handleNav} >חדו"א</a>
             <a href="#/Notebook"  onClick={handleNav}>לוגיקה ותורת הקבוצות</a>
             
             </div>

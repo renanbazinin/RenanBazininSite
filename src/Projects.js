@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link ,useNavigate} from "react-router-dom"
 import './App.css';
 
 import { useSelector } from "react-redux"
 
+import { useDispatch } from 'react-redux';
 
 export default function Projects() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+
+    dispatch({type:"CHANGE-SEC",payload:"Projects"})
+  }, []);
+
   const storeData = useSelector(store => { return store })
     const navigate = useNavigate()
   return (
