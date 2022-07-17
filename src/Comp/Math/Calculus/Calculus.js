@@ -48,9 +48,11 @@ export default function () {
 
                 <div class="topnav-heb" style={{"margin":"0"}} >
                   
-                  <a href="#/Notebook/Calculus" onClick={handleNav} >הקדמה</a>
+                  <a href="#/Notebook/Calculus/FirstThingsCal" onClick={handleNav} >הקדמה</a>
                   <a href="#/Notebook/Calculus/Induction" onClick={handleNav}>אינדוקציה</a>
-                 
+                  <a href="#/Notebook/Calculus/InequalityOfArithmetic" onClick={handleNav}>אי שיווין הממוצעים  </a>
+                  <a href="#/Notebook/Calculus/SubDense" onClick={handleNav}> צפיפות תת-קבוצה  </a>
+                
                   </div>
                 
                   <Outlet/>

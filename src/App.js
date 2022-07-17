@@ -11,8 +11,12 @@ import GuessTheSub from './Comp/GuessTheSub'
 import Guess from './Comp/Guess'
 import Notebook from './Comp/Notebook';
 import axios from 'axios'
+
+import FirstThingsCal from './Comp/Math/Calculus/FirstThingsCal'
 import Induction from './Comp/Math/Calculus/Induction';
 import Calculus from './Comp/Math/Calculus/Calculus'
+import InequalityOfArithmetic from './Comp/Math/Calculus/InequalityOfArithmetic';
+import SubDense from './Comp/Math/Calculus/SubDense';
 
 import {Nav , Navbar, NavLink,Container,NavDropdown}from 'react-bootstrap';
 
@@ -200,6 +204,9 @@ function App() {
           
           <Route path="Calculus" element={<Calculus  />} >
              <Route path="Induction" element={<Induction  />} />
+             <Route path='InequalityOfArithmetic' element={<InequalityOfArithmetic/>} />
+             <Route path='SubDense' element={<SubDense/>} />
+             <Route path='FirstThingsCal' element={<FirstThingsCal/>} />
           </Route>
 
         </Route>
@@ -238,6 +245,8 @@ function App() {
                       }):""}
             </div>
     </div>
+
+      <div className='demi-div'></div>
       <footer>
       Email: <a href = "mailto: renanbazinin2@gmail.com">renanbazinin2@gmail.com</a>
 

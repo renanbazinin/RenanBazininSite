@@ -52,7 +52,11 @@ html{
   direction: ltr;
   font-size: large;
 }
-
+.demi-div{
+  width: 100%;
+  height: 10px;
+  margin-bottom: 2%;
+}
 footer{
   
   margin-top: 5%;
