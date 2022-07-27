@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Link ,useNavigate, Outlet,useParams } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 
 export default function () {
 
@@ -18,13 +18,16 @@ export default function () {
   
   
       for (let btc of arrayOfA) {
+
         btc.className='';
         console.log(btc)
         if(btc.innerHTML===e.target.innerHTML)
          btc.className='a-pressed';
-        
+         if(btc.innerHTML === "נושאי פתיחה-" || " ההתחלה:" === btc.innerHTML )
+         btc.className="fakeClass"   
       } 
-     
+
+  
     }
     const toggleCon = ()=>{
       
@@ -47,12 +50,20 @@ export default function () {
                 ""}
 
                 <div class="topnav-heb" style={{"margin":"0"}} >
-                  
-                  <a href="#/Notebook/Calculus/FirstThingsCal" onClick={handleNav} >הקדמה</a>
+                 
+                 
+    
                   <a href="#/Notebook/Calculus/Induction" onClick={handleNav}>אינדוקציה</a>
                   <a href="#/Notebook/Calculus/InequalityOfArithmetic" onClick={handleNav}>אי שיווין הממוצעים  </a>
                   <a href="#/Notebook/Calculus/SubDense" onClick={handleNav}> צפיפות תת-קבוצה  </a>
-                
+                  <a href="#/Notebook/Calculus/Neighborhood" onClick={handleNav}> סביבה וכמעט לכל n </a>
+                  <a href="#/Notebook/Calculus/LimitOfSeq" onClick={handleNav}> גבול של סדרה </a>
+                  <a href="#/Notebook/Calculus/LimitOfSeqArithmetic" onClick={handleNav}> אריתמטיקה של גבול סופי</a>
+                  <a href="#/Notebook/Calculus/InfntyLimitOfSeq" onClick={handleNav}> גבול במובן הרחב</a>
+                  <a href="#/Notebook/Calculus/InfntyLimitArithmetic" onClick={handleNav}> אריתמטיקה של גבול במובן הרחב</a>
+                  <a href="#/Notebook/Calculus/LimitingBehavior" onClick={handleNav}> סדרי גודל</a>
+
+
                   </div>
                 
                   <Outlet/>

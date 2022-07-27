@@ -181,7 +181,21 @@ a:visited {
   background-color:#1A1A1B;
   color: white;
 }
+/*
+.fakeClass{
 
+  text-decoration: underline!important;
+  border: none!important;
+  color: rgb(194, 191, 182)!important;
+
+}
+
+.fakeClass:hover{
+
+  background-color:#333!important;
+  color: rgb(194, 191, 182)!important;
+}
+*/
 .a-pressed{
   background-color:rgb(26, 26, 27); 
   border-color:rgb(26, 26, 27) !important;

@@ -17,6 +17,14 @@ import Induction from './Comp/Math/Calculus/Induction';
 import Calculus from './Comp/Math/Calculus/Calculus'
 import InequalityOfArithmetic from './Comp/Math/Calculus/InequalityOfArithmetic';
 import SubDense from './Comp/Math/Calculus/SubDense';
+import Neighborhood from './Comp/Math/Calculus/Neighborhood'
+import LimitOfSeq from './Comp/Math/Calculus/LimitOfSeq';
+import LimitOfSeqArithmetic from './Comp/Math/Calculus/LimitOfSeqArithmetic'
+import InfntyLimitOfSeq from './Comp/Math/Calculus/InfntyLimitOfSeq';
+import InfntyLimitArithmetic from './Comp/Math/Calculus/InfntyLimitArithmetic';
+import LimitingBehavior from './Comp/Math/Calculus/LimitingBehavior';
+
+import SetTheory from './Comp/Math/SetTheoryAndLogics/SetTheory';
 
 import {Nav , Navbar, NavLink,Container,NavDropdown}from 'react-bootstrap';
 
@@ -200,15 +208,22 @@ function App() {
 
         <Route path='/Guess' element={<Guess/>}/>
 
-        <Route path='/Notebook' element={<Notebook c/>}>
-          
+        <Route path='/Notebook' element={<Notebook />}>
+          <Route path='FirstThingsCal' element={<FirstThingsCal/>} />
           <Route path="Calculus" element={<Calculus  />} >
              <Route path="Induction" element={<Induction  />} />
              <Route path='InequalityOfArithmetic' element={<InequalityOfArithmetic/>} />
              <Route path='SubDense' element={<SubDense/>} />
-             <Route path='FirstThingsCal' element={<FirstThingsCal/>} />
-          </Route>
+             <Route path='LimitOfSeq' element={<LimitOfSeq/>} />
+             <Route path='Neighborhood' element={<Neighborhood/>} />
+             <Route path='LimitOfSeqArithmetic' element={<LimitOfSeqArithmetic/>}/>
+             <Route path='InfntyLimitOfSeq' element={<InfntyLimitOfSeq/>}/>
+             <Route path='InfntyLimitArithmetic' element={<InfntyLimitArithmetic/>}/>
+             <Route path='LimitingBehavior' element={<LimitingBehavior/>}/>
 
+
+          </Route>
+          <Route path='SetTheory' element = {<SetTheory/>} />
         </Route>
     
       </Routes>

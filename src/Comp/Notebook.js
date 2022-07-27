@@ -83,9 +83,11 @@ export default function Notebook() {
                  <div  className='StudyHebraw'>
                  <br/>
                <div class="topnav-heb" style={{"margin":"0"}} >
-                  
-            <a href="#/Notebook/Calculus" onClick={handleNav} >חדו"א</a>
-            <a href="#/Notebook"  onClick={handleNav}>לוגיקה ותורת הקבוצות</a>
+
+              <a href="#/Notebook/FirstThingsCal" onClick={handleNav} >הקדמה</a>
+            <a href="#/Notebook/Calculus" onClick={handleNav} >  אינפי/חדו"א</a>
+            <a href="#/Notebook/SetTheory"  onClick={handleNav}>לוגיקה ותורת הקבוצות</a>
+            
             
             </div>
 
