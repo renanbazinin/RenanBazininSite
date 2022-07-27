@@ -66,7 +66,7 @@ export default function Notebook() {
     for (let btc of arrayOfA) {
       btc.className='';
      
-      if(btc.innerHTML===e.target.innerHTML)
+      if(btc.innerHTML===e.target.innerHTML  )
        btc.className='a-pressed';
       
     } 
@@ -76,7 +76,7 @@ export default function Notebook() {
     <div>
         
         {
-        password===process.env.REACT_APP_LOG_PASS?
+        password===process.env.REACT_APP_LOG_PASS || process.env.REACT_APP_LOG_PASS_ADMIN === password?
         <div>Welcome
             <button onClick={logOut}>Log Out</button>
 

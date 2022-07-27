@@ -98,6 +98,11 @@ function App() {
   }
 
 
+  const delCom = async (id)=>{
+    const delURLNew = herokuURL+id
+    const res = axios.delete(delURLNew)
+    console.log(res)
+  }
 
 
 
@@ -256,7 +261,9 @@ function App() {
               <div >
                       {allcomment!=null?allcomment.map((commentAPI,i)=>{
                         if(commentAPI.subject===storeData.sec)
-                          return <span key={i+'span'}><div key={i} className='comments'>שם:{commentAPI.name===undefined?"אנונימי":commentAPI.name} סוג:{commentAPI.type}<br/><span style={{"fontSize":"x-large"}}>{commentAPI.text}</span><br/></div><br/></span>
+                          return <span key={i+'span'}><div key={i} className='comments'>
+                            {localStorage.getItem('enter_id')===process.env.REACT_APP_LOG_PASS_ADMIN?<img className='Del-Com' src='https://cdn.pixabay.com/photo/2012/04/02/16/12/x-24850_960_720.png' onClick={()=>delCom(commentAPI._id)}></img>:""}
+                           <br/>שם:{commentAPI.name===undefined?"אנונימי":commentAPI.name} סוג:{commentAPI.type}<br/><span style={{"fontSize":"x-large"}}>{commentAPI.text}</span><br/></div><br/></span>
                       }):""}
             </div>
     </div>
