@@ -62,7 +62,14 @@ export default function () {
                   <a href="#/Notebook/Calculus/InfntyLimitOfSeq" onClick={handleNav}> גבול במובן הרחב</a>
                   <a href="#/Notebook/Calculus/InfntyLimitArithmetic" onClick={handleNav}> אריתמטיקה של גבול במובן הרחב</a>
                   <a href="#/Notebook/Calculus/LimitingBehavior" onClick={handleNav}> סדרי גודל</a>
+                  <a href="#/Notebook/Calculus/ConvergenceTests" onClick={handleNav}> מבחן המנה לגבולות </a>
+                  <a href="#/Notebook/Calculus/BlockedAndMono" onClick={handleNav}> סדרות חסומות ומונוטוניות</a>
+                  <a href="#/Notebook/Calculus/LemaOfCantor" onClick={handleNav}> הלמה של קנטר</a>
+                  <a href="#/Notebook/Calculus/SubSeries" onClick={handleNav}> תת-סדרות</a>
 
+                  <a href="#/Notebook/Calculus/BolzanoWeierstrass" onClick={handleNav}>  בולצאנו ויירשטראס</a>
+                  <a href="#/Notebook/Calculus/UpperLowerBounds" onClick={handleNav}> גבול עליון ותחתון</a>
+                  <a href="#/Notebook/Calculus/CauchySequence" onClick={handleNav}> קריטריון קושי</a>
 
                   </div>
                 

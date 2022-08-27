@@ -23,8 +23,17 @@ import LimitOfSeqArithmetic from './Comp/Math/Calculus/LimitOfSeqArithmetic'
 import InfntyLimitOfSeq from './Comp/Math/Calculus/InfntyLimitOfSeq';
 import InfntyLimitArithmetic from './Comp/Math/Calculus/InfntyLimitArithmetic';
 import LimitingBehavior from './Comp/Math/Calculus/LimitingBehavior';
+import ConvergenceTests from './Comp/Math/Calculus/ConvergenceTests'
+import BlockedAndMono from './Comp/Math/Calculus/BlockedAndMono'
+import LemaOfCantor from './Comp/Math/Calculus/LemaOfCantor'
+import SubSeries from './Comp/Math/Calculus/SubSeries'
+import BolzanoWeierstrass from './Comp/Math/Calculus/BolzanoWeierstrass'
+import UpperLowerBounds from './Comp/Math/Calculus/UpperLowerBounds'
+import CauchySequence from './Comp/Math/Calculus/CauchySequence'
 
 import SetTheory from './Comp/Math/SetTheoryAndLogics/SetTheory';
+
+import LeanC from './Comp/Math/LeanC';
 
 import {Nav , Navbar, NavLink,Container,NavDropdown}from 'react-bootstrap';
 
@@ -225,15 +234,23 @@ function App() {
              <Route path='InfntyLimitOfSeq' element={<InfntyLimitOfSeq/>}/>
              <Route path='InfntyLimitArithmetic' element={<InfntyLimitArithmetic/>}/>
              <Route path='LimitingBehavior' element={<LimitingBehavior/>}/>
-
-
+             <Route path='ConvergenceTests' element={<ConvergenceTests/>}/>
+             <Route path='BlockedAndMono' element={<BlockedAndMono/>}/>
+             <Route path='LemaOfCantor' element={<LemaOfCantor/>}/>
+             <Route path='SubSeries' element={<SubSeries/>}/>
+             <Route path='BolzanoWeierstrass' element={<BolzanoWeierstrass/>}/>
+             <Route path='UpperLowerBounds' element={<UpperLowerBounds/>}/>
+             <Route path='CauchySequence' element={<CauchySequence/>}/>
           </Route>
+          <Route path='LeanC' element={<LeanC/>}/>
           <Route path='SetTheory' element = {<SetTheory/>} />
         </Route>
     
       </Routes>
     
 
+
+    {allcomment!==null?
     <div className='comments-class' >
                 <div > 
         
@@ -257,6 +274,7 @@ function App() {
                       <br/>
                       <button onClick={sendComment}>שלח</button>
               </div>
+              
                {storeData.sec} - נושא התגובות 
               <div >
                       {allcomment!=null?allcomment.map((commentAPI,i)=>{
@@ -266,7 +284,7 @@ function App() {
                            <br/>שם:{commentAPI.name===undefined?"אנונימי":commentAPI.name} סוג:{commentAPI.type}<br/><span style={{"fontSize":"x-large"}}>{commentAPI.text}</span><br/></div><br/></span>
                       }):""}
             </div>
-    </div>
+    </div>:<span> תגובות <br/><img src='https://icon-library.com/images/loading-icon-animated-gif/loading-icon-animated-gif-5.jpg' style={{"width":"200px"}}/></span>}
 
       <div className='demi-div'></div>
       <footer>
