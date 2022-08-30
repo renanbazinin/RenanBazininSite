@@ -41,7 +41,7 @@ export default function () {
   return (
     <div>
         <h4>חדו"א</h4>
-        <a onClick={toggleCon}>Toggle table of contents </a>
+        <button onClick={toggleCon}>Click Here to toggle table of contents <br/>on/off</button>
         <br/>
         {isGen?
                 <iframe style={{"width":"500px","height":"350px"}} frameborder="0" scrolling="no"

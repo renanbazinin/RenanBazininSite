@@ -28,10 +28,12 @@ export default function Projects() {
         <strong>short:</strong> Helping the user to write medical record quickly and more efficient. Anamenztron = Anamnesis + tron 
         <br/>
         <strong>Story:</strong> This is very special project in my heart.<br/>
-        Back in 2019 I was in the army. I was medic and stationed in big clinic. In normal day I encountered atleast 50 patients.
-        Because many legal laws in medical care I need to record many elaborate medical terms. This was so exhausting.
-        Like 90% of the cases were with similar pattrens. I knew Web programming languages and had an idea to make life easy. 
-        But the problem with the army is that you can't import web environment without hell. And I was only medic. So I did it with pure vanilla JavaScript. Wrote in notepad++.
+        Back in 2019, I was in the army. I was a medic and stationed in a big clinic.
+         On a normal day I encountered at least 50 patients. Because of many legal laws in medical care,
+          I need to record many elaborate medical terms. This was so exhausting. Like 90% of the cases were with similar patterns.
+           I knew Web programming languages and had an idea to make life easy.
+            But the problem with the army is that you can't import web environment without hell. And I was only  a medic. So I did it with pure vanilla JavaScript.
+            Wrote in notepad++.
          
         </div>
         <button onClick={()=>{window.open(
