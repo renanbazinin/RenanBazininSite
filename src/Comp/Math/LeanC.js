@@ -1,9 +1,19 @@
 
 import React, { useState, useEffect } from 'react';
-export default function LeanC() {
 
+import { useSelector } from "react-redux"
+
+import { useDispatch } from 'react-redux';
+export default function LeanC() {
+  const dispatch = useDispatch();
+  const storeData = useSelector(store => { return store })
   const [url,setUrl] = useState("");
 
+  useEffect(() => {
+
+    dispatch({type:"CHANGE-SEC",payload:"BolzanoWeierstrass"})
+
+ }, []);
   const handleNav = (e)=>{
    
 
