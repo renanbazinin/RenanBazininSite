@@ -11,7 +11,7 @@ export default function LeanC() {
 
   useEffect(() => {
 
-    dispatch({type:"CHANGE-SEC",payload:"BolzanoWeierstrass"})
+    dispatch({type:"CHANGE-SEC",payload:"C Programming - ALL "})
 
  }, []);
   const handleNav = (e)=>{
