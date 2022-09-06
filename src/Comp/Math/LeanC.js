@@ -32,7 +32,7 @@ export default function LeanC() {
       <br/>
             <div class="topnav-heb" style={{"margin":"0"}} >
                   <a onClick={(e)=>{handleNav(e)}} id='https://drive.google.com/file/d/10dZjX1qrRoV9j9MxNvd4RjpEqDCGeFqu/preview'>פתח דבר ויצוג בסיסיים שונים</a>
-                  <a onClick={handleNav} id ='https://drive.google.com/file/d/10msS5BBD4di_tY1OvlsP0RXRGCd_QJKN/view?usp=sharing'> לא אעשה הסבר על יסודות התכנות</a>
+                  <a onClick={handleNav} id ='https://drive.google.com/file/d/10msS5BBD4di_tY1OvlsP0RXRGCd_QJKN/preview'> לא אעשה הסבר על יסודות התכנות</a>
                   <a onClick={handleNav}  id='https://drive.google.com/file/d/10gEDOTcMjnQ_-cta4VJWXz580_8ppwmq/preview' >מגבלת הטיפוס int וייצוג מספר שלילי</a>
                   <a onClick={handleNav}  id='https://drive.google.com/file/d/10mE18Qa_SbnFndnToF_Agb9rWVggZ2Wb/preview'>  כתובות ומצביעים </a>
               </div>
