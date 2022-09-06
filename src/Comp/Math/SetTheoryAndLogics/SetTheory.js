@@ -29,8 +29,8 @@ export default function SetTheory() {
 
         <div class="topnav-heb" style={{"margin":"0"}} >
 
-            <a onClick={handleNav} >  אינפי/חדו"א</a>
-            <a onClick={handleNav}>לוגיקה ותורת הקבוצות</a>
+            <a onClick={handleNav} > כלום 1</a>
+            <a onClick={handleNav}> כלום 2</a>
 
 
         </div>
