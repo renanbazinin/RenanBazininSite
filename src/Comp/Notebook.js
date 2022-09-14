@@ -40,6 +40,11 @@ export default function Notebook() {
         }
     }, [password])
 
+    const passwordChack = (e)=>{
+      alert(`Wrong password. You typed: ${password}`)
+
+    }
+
     const handlPass = (e)=>{
 
         sessionStorage.setItem('enter_id', e.target.value);
@@ -101,6 +106,7 @@ export default function Notebook() {
         </div>:<div>
         Enter your password for enter
             <input type="text" onChange={(e)=>handlPass(e)} />
+            <button onClick={passwordChack}>כניסה</button>
             </div>
     }
 

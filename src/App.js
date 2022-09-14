@@ -30,6 +30,8 @@ import SubSeries from './Comp/Math/Calculus/SubSeries'
 import BolzanoWeierstrass from './Comp/Math/Calculus/BolzanoWeierstrass'
 import UpperLowerBounds from './Comp/Math/Calculus/UpperLowerBounds'
 import CauchySequence from './Comp/Math/Calculus/CauchySequence'
+import Functions from './Comp/Math/Calculus/Functions'
+
 
 import SetTheory from './Comp/Math/SetTheoryAndLogics/SetTheory';
 
@@ -241,6 +243,8 @@ function App() {
              <Route path='BolzanoWeierstrass' element={<BolzanoWeierstrass/>}/>
              <Route path='UpperLowerBounds' element={<UpperLowerBounds/>}/>
              <Route path='CauchySequence' element={<CauchySequence/>}/>
+             <Route path='Functions' element={<Functions/>}/>
+             Functions
           </Route>
           <Route path='LeanC' element={<LeanC/>}/>
           <Route path='SetTheory' element = {<SetTheory/>} />

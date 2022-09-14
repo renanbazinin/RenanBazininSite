@@ -70,6 +70,8 @@ export default function () {
                   <a href="#/Notebook/Calculus/BolzanoWeierstrass" onClick={handleNav}>  בולצאנו ויירשטראס</a>
                   <a href="#/Notebook/Calculus/UpperLowerBounds" onClick={handleNav}> גבול עליון ותחתון</a>
                   <a href="#/Notebook/Calculus/CauchySequence" onClick={handleNav}> קריטריון קושי</a>
+                  <a style={{"backgroundColor":"#131010","color":"#131010"}}>סוד</a>
+                  <a href="#/Notebook/Calculus/Functions" onClick={handleNav}> פונקציות</a>
 
                   </div>
                 
