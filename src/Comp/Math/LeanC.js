@@ -47,6 +47,7 @@ export default function LeanC() {
                   <a onClick={handleNav}  id='https://drive.google.com/file/d/10gEDOTcMjnQ_-cta4VJWXz580_8ppwmq/preview' >מגבלת הטיפוס int וייצוג מספר שלילי</a>
                   <a onClick={handleNav}  id='https://drive.google.com/file/d/10mE18Qa_SbnFndnToF_Agb9rWVggZ2Wb/preview'>  כתובות ומצביעים </a>
                   <a onClick={handleNav}  id='https://drive.google.com/file/d/10qx-_nsaCI2YbnxllFd-z-J48u6vKFFu/preview'>  הקצאה דינמית</a>
+                  <a onClick={handleNav}  id='https://drive.google.com/file/d/10tzYxbXGLIm9C7qdSuHa1qiVxKjeZyyD/preview'>  מחרוזות</a>
               </div>
 
       <div>

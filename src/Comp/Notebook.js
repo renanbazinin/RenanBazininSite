@@ -79,10 +79,15 @@ export default function Notebook() {
   }
   return (
     <div>
-        
+        <a href='https://renanbazinin.github.io/Renans-Notebook/'>מתחיל להכין גרסה חדשה למחברת של רנן 
+        <br/>
+        <h5>לחץ כאן למחברת של רנן 2.0</h5>
+        </a>
+        <br/>
+ 
         {
         password===process.env.REACT_APP_LOG_PASS || process.env.REACT_APP_LOG_PASS_ADMIN === password?
-        <div>Welcome
+        <div>Welcome<br/>
             <button onClick={logOut}>Log Out</button>
 
                  <div  className='StudyHebraw'>

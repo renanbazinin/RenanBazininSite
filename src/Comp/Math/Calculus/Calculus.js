@@ -34,8 +34,8 @@ export default function () {
         setIsGen(!isGen)
     }
     useEffect(()=>{
-      if(document.URL.split("/")[document.URL.split("/").length-1]==="Calculus")
-          setIsGen(true)
+      //if(document.URL.split("/")[document.URL.split("/").length-1]==="Calculus")
+       //   setIsGen(true)
     }, [])
 
   return (
