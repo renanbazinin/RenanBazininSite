@@ -188,10 +188,22 @@ function App() {
      
       <div className='About'>
         
-        <select onChange={(e)=>{toggleLang(e)}}>
-          <option defaultValue >English</option>
-          <option>עברית</option>
-          </select>
+        <select 
+        onChange={(e)=>{toggleLang(e)}}
+        style={{
+          backgroundColor: "#252525",
+          color: "white",
+          borderColor: "black",
+          borderRadius: "5px",
+          padding: "5px",
+          fontSize: "16px",
+          cursor: "pointer",
+        }}
+      >
+        <option defaultValue >English</option>
+        <option>עברית</option>
+      </select>
+
         </div>
       <div class="topnav">
         <a href="#/RenanBazinin" onClick={handleNav}> About Me</a>
@@ -255,8 +267,8 @@ function App() {
 
 
     {allcomment!==null?
-    <div className='comments-class' >
-                <div > 
+      <div className='comments-class' style={{display:"none"}}>
+                        <div > 
         
                       <label>
                         סוג תגובה

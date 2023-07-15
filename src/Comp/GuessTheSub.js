@@ -17,7 +17,7 @@ export default function GuessTheSub() {
     const [subsRND,setSubsRND] = useState([])
     const [score,setScore] = useState({correct:false,score:0,waiting:true})
     const playerGuessed = (e)=>{
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      //window.scrollTo({ top: 0, behavior: 'smooth' });
 
       const currentScore = score.score
       if(e.target.innerHTML === subChose)

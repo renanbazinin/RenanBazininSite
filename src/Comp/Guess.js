@@ -72,7 +72,7 @@ export default function Guess() {
         }
         await setSubsRND(arrayOfRndSub)
         console.log(document.body.scrollHeight)
-        window.scrollTo(0, document.body.scrollHeight+1000);
+        //window.scrollTo(0, document.body.scrollHeight+1000);
 
         
     }

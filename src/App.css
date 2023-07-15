@@ -1,6 +1,6 @@
 .App {
   color: white;
-  background-color:#131010;
+  background-color:#101010;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -10,16 +10,16 @@
 
 
 html{
-  background-color:#131010;
+  background-color:#252525;
   color: white;
   --bs-bg-opacity: 1;
 
-  margin-bottom: 10%;
+  margin-bottom: 1%;
 }
 
 
 .About{
-  background-color:#1A1A1B;
+  background-color:#252525;
   text-align: left;
   padding-bottom: 5px;
   margin-left: 10%;
@@ -34,14 +34,14 @@ html{
   
   margin-left: 10%;
   margin-right: 10%;
-  background-color: #1A1A1B;
+  background-color:#252525;
   direction: rtl;
   font-size: large;
 }
 .StudyHebraw{
   margin-left: 10%;
   margin-right: 10%;
-  background-color: #1A1A1B;
+  background-color:#252525;
   direction: rtl;
 }
 .Projects{
@@ -70,17 +70,20 @@ footer{
 
   text-align: left;
 }
-a:link{
-  color: rgb(129, 39, 11)
+a:link {
+  color: #0099CC;
 }
+
 a:visited {
-  color: green;
+  color: #0077AA; /* a slightly darker shade for visited links */
 }
-.NormalLink:link{
-  color: rgb(0, 145, 255)
+
+.NormalLink:link {
+  color: #0099CC;
 }
-.NormalLink:visited{
-  color: rgb(153, 0, 255)
+
+.NormalLink:visited {
+  color: #0077AA;
 }
 
 .OfHeap{
@@ -90,17 +93,16 @@ a:visited {
 
 
 
-.button-space{
-  width: auto;
-  margin: 10px;
-  
+.button-space {
+  background-color: #0099CC;
+  color: white; /* white text on a blue background */
+  transition: background-color 0.3s ease; /* animate the background color */
 }
 
-.button-space:hover{
-  
-  color: red;
+.button-space:hover {
+  background-color: #0077AA; /* darken the button color on hover */
+  color: white;
 }
-
 .button-pressed{
 
   border: 0ch;
