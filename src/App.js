@@ -49,6 +49,8 @@ import { useDispatch } from 'react-redux';
 
 
 function App() {
+  document.title = 'Renan Bazinin Site';
+
   const storeData = useSelector(store => { return store })
   const dispatch = useDispatch();
   const [lang,setLang] = useState('he');
