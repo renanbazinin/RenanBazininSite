@@ -25,7 +25,7 @@ const projects = [
     title: "News Fetcher",
     image: 'https://i.imgur.com/y6Zos1q.png',
     short: "News from famous sites",
-    story: "The News Fetcher site aggregates the latest news from multiple sources, including BBC, NYT, Ynet, Maariv, N12, Rotter, Walla, Calcalist, and Haaretz, providing users with a consolidated view of current events. It features a user-friendly interface with icons representing each news source, dynamic updates, and a transparent footer with contact information.",
+    story: "The News Fetcher site aggregates the latest news from multiple sources, including BBC, NYT, Ynet, Maariv, N12, Rotter, Walla, Calcalist, and Haaretz, providing users with a consolidated view of current events.",
     link: 'https://renanbazinin.github.io/allNews/public/index.html'
   },
 
