@@ -22,11 +22,20 @@ const projects = [
     image: 'https://i.imgur.com/opmOlZ5.png'
   },
   {
+    title: "News Fetcher",
+    image: 'https://i.imgur.com/y6Zos1q.png',
+    short: "News from famous sites",
+    story: "The News Fetcher site aggregates the latest news from multiple sources, including BBC, NYT, Ynet, Maariv, N12, Rotter, Walla, Calcalist, and Haaretz, providing users with a consolidated view of current events. It features a user-friendly interface with icons representing each news source, dynamic updates, and a transparent footer with contact information.",
+    link: 'https://renanbazinin.github.io/allNews/public/index.html'
+  },
+
+  {
     title: "FullStack Course , From KERNELiOS",
     short: "Site destined to manager who runs movie-rental store (like BlockBuster)",
     story: "After I discharged from the army, I got a free course in fullstack. I learned advanced JavaScript, React, and NoSQL (using Mongo). The course project was to create a site for a manager who runs a movie-rental store. The site allows the manager to manage movies and subscribers. Because in Heroku the _id is changing, I temporarily gave all other users that will create all permissions. So don't create new users. Only create/edit members (subscribers). Also, you can edit/add movies.",
     link: 'https://github.com/renanbazinin/FinalFullStack-Movies-managage/'
   },
+  
 ];
 
 

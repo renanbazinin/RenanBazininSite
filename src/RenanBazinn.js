@@ -46,6 +46,8 @@ export default function RenanBazinn() {
                   <li>In high school I participated in many Hackathons - second prize in one of them</li>
                   <li>I still open to everything in this field. I like Web-Development , Algorithmics and hope to gain enough mathematical theory to explor data science world </li>
                   <li>My project in software engineering was -"Discover the author of anonymous book by data of many other books and authors" inspire by this <a className='NormalLink' href='https://languagelog.ldc.upenn.edu/nll/?p=5315'>Article</a></li>             
+                  <li>Seconds year at MTA (Academic Tel Aviv Yafo) </li>
+
                   
               </ul>
         <h3 style={{"textDecoration":"underline"}}>knowledge</h3>    
@@ -54,9 +56,9 @@ export default function RenanBazinn() {
             High-level programming language:
                 <ul>
       
-                  <li>C# from high school (97 score in computer science)</li>
-                  <li>JAVA from Open University </li>
-                  <ul><li>OOP, recursion and how to calculate time complexity </li></ul>
+
+                  <li>JAVA</li>
+                  <li>CPP</li>
                   <li>Python from project in 5 Point the software engineering (100 score)</li>
                   </ul>
                   Web-Development:
